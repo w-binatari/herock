@@ -1,0 +1,173 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { MapPin, Phone, Mail, Clock, Share2, MessageCircle, Video, Instagram, Facebook, AlertTriangle, ArrowRight } from "lucide-react";
+
+const footerLinks = {
+  quickLinks: [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Solutions", href: "/solutions" },
+    { label: "Products", href: "/products" },
+    { label: "Projects", href: "/projects" },
+    { label: "Contact Us", href: "/contact" },
+  ],
+  solutions: [
+    { label: "Oil Spill Response", href: "/solutions#oil-spill" },
+    { label: "Water Pollution Control", href: "/solutions#water-pollution" },
+    { label: "Industrial Waste Management", href: "/solutions#industrial" },
+    { label: "Environmental Restoration", href: "/solutions#restoration" },
+  ],
+  resources: [
+    { label: "Blog", href: "/blog" },
+    { label: "Case Studies", href: "/case-studies" },
+    { label: "Downloads", href: "/downloads" },
+    { label: "FAQs", href: "/faqs" },
+    { label: "News", href: "/news" },
+  ],
+};
+
+const socialLinks = [
+  { icon: <Share2 size={14} />, href: "#", label: "LinkedIn" },
+  { icon: <MessageCircle size={14} />, href: "#", label: "Twitter / X" },
+  { icon: <Video size={14} />, href: "#", label: "YouTube" },
+  { icon: <Instagram size={14} />, href: "#", label: "Instagram" },
+  { icon: <Facebook size={14} />, href: "#", label: "Facebook" },
+];
+
+export default function Footer() {
+  return (
+    <footer className="bg-[#0A3D21] text-white">
+      {/* Main Footer */}
+      <div className="max-w-7xl mx-auto px-4 pt-16 pb-10">
+        <div className="grid grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1.2fr] gap-10">
+          {/* Column 1 - Company */}
+          <div className="col-span-2 lg:col-span-1">
+            <Image
+              src="/navbar_logo.png"
+              alt="Herock Envirotech"
+              width={150}
+              height={50}
+              className="h-11 w-auto object-contain mb-4 brightness-200 contrast-75"
+            />
+            <p className="text-white/50 text-xs leading-relaxed mb-5">
+              Transforming waste into innovative solutions for a cleaner, healthier and more sustainable planet.
+            </p>
+            <div className="flex items-center gap-2 mb-5">
+              {socialLinks.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  aria-label={s.label}
+                  className="w-7 h-7 rounded-full bg-white/10 hover:bg-[#1E7A46] flex items-center justify-center transition-colors"
+                >
+                  {s.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Column 2 - Quick Links */}
+          <div>
+            <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Quick Links</h4>
+            <ul className="space-y-2.5">
+              {footerLinks.quickLinks.map((l) => (
+                <li key={l.label}>
+                  <Link href={l.href} className="text-white/50 hover:text-[#4ADE80] text-xs transition-colors">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3 - Solutions */}
+          <div>
+            <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Our Solutions</h4>
+            <ul className="space-y-2.5">
+              {footerLinks.solutions.map((l) => (
+                <li key={l.label}>
+                  <Link href={l.href} className="text-white/50 hover:text-[#4ADE80] text-xs transition-colors">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4 - Resources */}
+          <div>
+            <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Resources</h4>
+            <ul className="space-y-2.5">
+              {footerLinks.resources.map((l) => (
+                <li key={l.label}>
+                  <Link href={l.href} className="text-white/50 hover:text-[#4ADE80] text-xs transition-colors">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 5 - Contact + Emergency */}
+          <div className="col-span-2 lg:col-span-1">
+            <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Contact Us</h4>
+            <ul className="space-y-3 mb-6">
+              <li className="flex items-start gap-2 text-white/50 text-xs">
+                <MapPin size={12} className="mt-0.5 flex-shrink-0 text-[#4ADE80]" />
+                <span>No. 12 Excellence Drive, Akure, Ondo State, Nigeria.</span>
+              </li>
+              <li className="flex items-center gap-2 text-white/50 text-xs">
+                <Phone size={12} className="flex-shrink-0 text-[#4ADE80]" />
+                <a href="tel:+2348001234567" className="hover:text-[#4ADE80] transition-colors">+234 800 123 4567</a>
+              </li>
+              <li className="flex items-center gap-2 text-white/50 text-xs">
+                <Mail size={12} className="flex-shrink-0 text-[#4ADE80]" />
+                <a href="mailto:info@herockenvirotech.com" className="hover:text-[#4ADE80] transition-colors">info@herockenvirotech.com</a>
+              </li>
+              <li className="flex items-center gap-2 text-white/50 text-xs">
+                <Clock size={12} className="flex-shrink-0 text-[#4ADE80]" />
+                <span>Mon - Fri: 8:00AM - 5:00PM</span>
+              </li>
+            </ul>
+
+            {/* Emergency Box */}
+            <div className="bg-[#1E7A46]/20 border border-[#1E7A46]/40 rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <AlertTriangle size={14} className="text-[#4ADE80]" />
+                <h5 className="text-white text-xs font-bold uppercase tracking-wider">Emergency Response</h5>
+              </div>
+              <p className="text-white/50 text-xs mb-3">For oil spill emergencies and urgent support.</p>
+              <p className="text-white font-black text-base mb-3">+234 803 000 1122</p>
+              <Link
+                href="/contact"
+                className="bg-[#1E7A46] hover:bg-green-500 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5 w-fit uppercase tracking-wider"
+              >
+                Report a Spill <ArrowRight size={12} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-white/40 text-xs">
+            © 2024 Herock Envirotech. All Rights Reserved.
+          </p>
+          <div className="flex items-center gap-5">
+            <Link href="/privacy" className="text-white/40 hover:text-white/70 text-xs transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-white/20">|</span>
+            <Link href="/terms" className="text-white/40 hover:text-white/70 text-xs transition-colors">
+              Terms of Use
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
