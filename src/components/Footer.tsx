@@ -54,18 +54,6 @@ export default function Footer() {
             <p className="text-white/50 text-xs leading-relaxed mb-5">
               Transforming waste into innovative solutions for a cleaner, healthier and more sustainable planet.
             </p>
-            <div className="flex items-center gap-2 mb-5">
-              {socialLinks.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  aria-label={s.label}
-                  className="w-7 h-7 rounded-full bg-white/10 hover:bg-[#1E7A46] flex items-center justify-center transition-colors"
-                >
-                  {s.icon}
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Column 2 - Quick Links */}
@@ -116,15 +104,15 @@ export default function Footer() {
             <ul className="space-y-3 mb-6">
               <li className="flex items-start gap-2 text-white/50 text-xs">
                 <MapPin size={12} className="mt-0.5 flex-shrink-0 text-[#4ADE80]" />
-                <span>No. 12 Excellence Drive, Akure, Ondo State, Nigeria.</span>
+                <span>41, Mbonu Street, D/Line, Port Harcourt, Nigeria.</span>
               </li>
               <li className="flex items-center gap-2 text-white/50 text-xs">
                 <Phone size={12} className="flex-shrink-0 text-[#4ADE80]" />
-                <a href="tel:+2348001234567" className="hover:text-[#4ADE80] transition-colors">+234 800 123 4567</a>
+                <a href="tel:+2349015384177" className="hover:text-[#4ADE80] transition-colors">+234 (0) 901 538 4177</a>
               </li>
               <li className="flex items-center gap-2 text-white/50 text-xs">
                 <Mail size={12} className="flex-shrink-0 text-[#4ADE80]" />
-                <a href="mailto:info@herockenvirotech.com" className="hover:text-[#4ADE80] transition-colors">info@herockenvirotech.com</a>
+                <a href="mailto:herockenvirotech@gmail.com" className="hover:text-[#4ADE80] transition-colors">herockenvirotech@gmail.com</a>
               </li>
               <li className="flex items-center gap-2 text-white/50 text-xs">
                 <Clock size={12} className="flex-shrink-0 text-[#4ADE80]" />

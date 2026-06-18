@@ -6,9 +6,9 @@ import { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send, Linkedin, MessageCircle, Play, Instagram, Facebook } from "lucide-react";
 
 const contactInfo = [
-  { icon: <MapPin size={20} />, title: "Office Address", value: "No. 12 Excellence Drive, Akure, Ondo State, Nigeria." },
-  { icon: <Phone size={20} />, title: "Phone Numbers", value: "+234 800 123 4567\n+234 803 000 1122 (Emergency)" },
-  { icon: <Mail size={20} />, title: "Email Address", value: "info@herockenvirotech.com" },
+  { icon: <MapPin size={20} />, title: "Office Address", value: "41, Mbonu Street, D/Line, Port Harcourt, Nigeria." },
+  { icon: <Phone size={20} />, title: "Phone Number", value: "+234 (0) 901 538 4177" },
+  { icon: <Mail size={20} />, title: "Email Address", value: "herockenvirotech@gmail.com" },
   { icon: <Clock size={20} />, title: "Office Hours", value: "Monday – Friday: 8:00AM – 5:00PM" },
 ];
 
@@ -31,7 +31,7 @@ export default function ContactPage() {
       <main className="pt-[102px]">
         {/* Hero */}
         <section className="relative bg-[#0E4D2F] py-28 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1600&q=80')] bg-cover bg-center opacity-15" />
+          <div className="absolute inset-0 bg-[url('/pillow_action.jpg')] bg-cover bg-center opacity-15" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0E4D2F]/95 to-[#1E7A46]/70" />
           <div className="relative max-w-7xl mx-auto px-4 text-center text-white">
             <span className="inline-block bg-white/10 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5">
@@ -52,7 +52,7 @@ export default function ContactPage() {
             {/* Contact Info */}
             <div>
               <h2 className="section-title mb-8">Contact Information</h2>
-              <div className="space-y-5 mb-10">
+              <div className="space-y-5">
                 {contactInfo.map((c) => (
                   <div key={c.title} className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0 text-[#1E7A46]">
@@ -64,28 +64,6 @@ export default function ContactPage() {
                     </div>
                   </div>
                 ))}
-              </div>
-
-              {/* Social Links */}
-              <div>
-                <p className="font-bold text-sm text-gray-700 uppercase tracking-wider mb-4">Follow Us</p>
-                <div className="flex gap-3">
-                  {[
-                    { icon: <Linkedin size={16} />, href: "#" },
-                    { icon: <MessageCircle size={16} />, href: "#" },
-                    { icon: <Play size={16} />, href: "#" },
-                    { icon: <Instagram size={16} />, href: "#" },
-                    { icon: <Facebook size={16} />, href: "#" },
-                  ].map((s, i) => (
-                    <a
-                      key={i}
-                      href={s.href}
-                      className="w-10 h-10 rounded-full bg-white border border-gray-200 hover:bg-[#1E7A46] hover:border-[#1E7A46] hover:text-white flex items-center justify-center text-gray-500 transition-all"
-                    >
-                      {s.icon}
-                    </a>
-                  ))}
-                </div>
               </div>
             </div>
 

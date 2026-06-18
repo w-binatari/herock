@@ -7,10 +7,10 @@ import { ArrowRight, ChevronLeft, ChevronRight, Recycle, Leaf, Zap, Globe } from
 const slides = [
   {
     id: 1,
-    badge: "Circular Economy Innovation",
-    headline: "INNOVATIVE SOLUTIONS.",
-    headlineGreen: "CLEANER ENVIRONMENT.",
-    sub: "Herock Envirotech transforms agricultural waste into high-performance products that solve environmental challenges.",
+    badge: "Biosorbent Oil Spill Solutions · Circular Economy Services",
+    headline: "TRANSFORMING WASTE INTO SOLUTIONS",
+    headlineGreen: "THAT PROTECT OUR BLUE ECONOMY.",
+    sub: "Herock Envirotech is a Nigerian cleantech startup turning agricultural waste into biodegradable, low-cost products that restore ecosystems and create economic value — starting with our flagship Chicken Feather Oil Spill Sorbent Pillow.",
     ctaPrimary: { label: "Explore Solutions", href: "/solutions" },
     ctaSecondary: { label: "Our Products", href: "/products" },
     ctaTertiary: { label: "Partner With Us", href: "/contact" },
@@ -71,8 +71,8 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000"
         style={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1580128660010-fd027e1e587a?w=1600&q=80")`,
-          opacity: 0.18,
+          backgroundImage: `url("/pillow_action.jpg")`,
+          opacity: 0.25,
         }}
       />
       {/* Gradient overlay */}
@@ -132,30 +132,13 @@ export default function Hero() {
                 <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-[#1E7A46]/30 blur-xl" />
                 <div className="absolute -bottom-8 -left-8 w-24 h-24 rounded-full bg-green-400/20 blur-xl" />
 
-                {/* Product image placeholder */}
+                {/* Product image */}
                 <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden aspect-[4/3] flex items-center justify-center">
-                  {/* Simulated oil-spill background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900 opacity-80" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    {/* Pillow mockup */}
-                    <div className="relative z-10 text-center">
-                      <div className="w-52 h-44 bg-gradient-to-br from-gray-100 via-white to-gray-200 rounded-[40px] shadow-2xl mx-auto flex flex-col items-center justify-center border-4 border-white/60 relative overflow-hidden">
-                        <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_4px,rgba(0,0,0,0.03)_4px,rgba(0,0,0,0.03)_8px)]" />
-                        <div className="relative z-10 p-4">
-                          <div className="w-8 h-8 rounded-full bg-[#1E7A46] flex items-center justify-center mb-2 mx-auto">
-                            <Leaf size={16} className="text-white" />
-                          </div>
-                          <p className="text-[#0E4D2F] font-black text-xs uppercase tracking-wider leading-tight text-center">
-                            HEROCK<br />ENVIROTECH
-                          </p>
-                          <p className="text-gray-600 font-bold text-[10px] uppercase tracking-wider leading-tight text-center mt-1">
-                            CHICKEN FEATHER<br />OIL SPILL SORBENT PILLOW
-                          </p>
-                          <p className="text-gray-400 text-[8px] text-center mt-1">Sustainable. Effective. Responsible.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <img 
+                    src="/pillow_feather.jpg" 
+                    alt="Chicken Feather Oil Spill Sorbent Pillow"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="mt-3 text-center">
                   <p className="text-white/60 text-xs uppercase tracking-widest">Flagship Product</p>

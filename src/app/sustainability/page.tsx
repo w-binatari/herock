@@ -57,7 +57,7 @@ export default function SustainabilityPage() {
       <main className="pt-[102px]">
         {/* Hero */}
         <section className="relative bg-[#0E4D2F] py-28 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1600&q=80')] bg-cover bg-center opacity-15" />
+          <div className="absolute inset-0 bg-cover bg-center opacity-15" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0E4D2F]/95 to-[#1E7A46]/70" />
           <div className="relative max-w-7xl mx-auto px-4 text-center text-white">
             <span className="inline-block bg-white/10 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5">

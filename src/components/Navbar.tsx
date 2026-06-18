@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Phone, Mail, Search } from "lucide-react";
 
 const navLinks = [
@@ -32,6 +33,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -41,25 +43,18 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex flex-col">
-      {/* Top Bar */}
       <div className="bg-[#0E4D2F] text-white text-xs py-2 px-4 hidden md:flex items-center justify-between">
         <div className="flex items-center gap-6">
-          <a href="tel:+2348001234567" className="flex items-center gap-1.5 hover:text-green-300 transition-colors">
+          <a href="tel:+2349015384177" className="flex items-center gap-1.5 hover:text-green-300 transition-colors">
             <Phone size={11} />
-            <span>+234 800 123 4567</span>
+            <span>+234 (0) 901 538 4177</span>
           </a>
-          <a href="mailto:info@herockenvirotech.com" className="flex items-center gap-1.5 hover:text-green-300 transition-colors">
+          <a href="mailto:herockenvirotech@gmail.com" className="flex items-center gap-1.5 hover:text-green-300 transition-colors">
             <Mail size={11} />
-            <span>info@herockenvirotech.com</span>
+            <span>herockenvirotech@gmail.com</span>
           </a>
         </div>
         <div className="flex items-center gap-3">
-          {/* Social icons */}
-          {["LinkedIn", "Twitter", "YouTube", "Instagram", "Facebook"].map((s) => (
-            <a key={s} href="#" aria-label={s} className="w-5 h-5 rounded-full bg-white/10 hover:bg-[#1E7A46] flex items-center justify-center transition-colors">
-              <span className="text-[9px] font-bold">{s[0]}</span>
-            </a>
-          ))}
           <a href="/contact" className="ml-3 bg-[#1E7A46] hover:bg-green-600 text-white text-xs font-bold px-4 py-1.5 rounded transition-colors uppercase tracking-wider">
             Request a Sample
           </a>
@@ -104,7 +99,7 @@ export default function Navbar() {
                   {link.children && <ChevronDown size={14} className="text-gray-400 group-hover:rotate-180 transition-transform duration-200" />}
                 </Link>
                 {/* Underline indicator for active */}
-                {link.label === "Home" && (
+                {pathname === link.href && (
                   <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#1E7A46] rounded-full" />
                 )}
                 {link.children && openDropdown === link.label && (
@@ -150,7 +145,7 @@ export default function Navbar() {
               <div key={link.label}>
                 <Link
                   href={link.href}
-                  className="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#1E7A46]"
+                  className={`block py-2.5 text-sm font-medium ${pathname === link.href ? "text-[#1E7A46]" : "text-gray-700"} hover:text-[#1E7A46]`}
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}

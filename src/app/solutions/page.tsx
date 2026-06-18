@@ -17,7 +17,7 @@ const solutions = [
       "Effective on crude, diesel, palm, and weathered oil",
     ],
     industries: ["Maritime & Shipping", "Oil & Gas Refineries", "Port Authorities", "Environmental Agencies"],
-    image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=800&q=80",
+    image: "/pillow_action.jpg",
     reverse: false,
   },
   {
@@ -33,7 +33,7 @@ const solutions = [
       "Compliance with environmental regulations",
     ],
     industries: ["Water Treatment Plants", "Fisheries & Aquaculture", "Conservation Groups", "Local Government"],
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+    image: "/pillow_feather.jpg",
     reverse: true,
   },
   {
@@ -49,7 +49,7 @@ const solutions = [
       "Supports ISO 14001 & ESHS compliance",
     ],
     industries: ["Petroleum Depots", "Manufacturing Plants", "Power Stations", "Mining Operations"],
-    image: "https://images.unsplash.com/photo-1565217574178-5a3ce23ca52e?w=800&q=80",
+    image: "/pillow_spill.jpg",
     reverse: false,
   },
 ];
@@ -61,7 +61,7 @@ export default function SolutionsPage() {
       <main className="pt-[102px]">
         {/* Hero */}
         <section className="relative bg-[#0E4D2F] py-28 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1600&q=80')] bg-cover bg-center opacity-15" />
+          <div className="absolute inset-0 bg-cover bg-center opacity-15" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0E4D2F]/95 to-[#1E7A46]/70" />
           <div className="relative max-w-7xl mx-auto px-4 text-center text-white">
             <span className="inline-block bg-white/10 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5">

@@ -9,7 +9,7 @@ const projects = [
     tagColor: "bg-[#1E7A46]",
     title: "Delta Coastline Cleanup Project",
     desc: "Successful deployment of feather sorbent pillows in a major oil spill incident.",
-    image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=600&q=80",
+    image: "/pillow_spill.jpg",
     href: "/projects/delta-coastline",
   },
   {
@@ -17,7 +17,7 @@ const projects = [
     tagColor: "bg-[#1D8A8A]",
     title: "Refinery Spill Management",
     desc: "Implementation in refinery environments for efficient spill control and recovery.",
-    image: "https://images.unsplash.com/photo-1565217574178-5a3ce23ca52e?w=600&q=80",
+    image: "/pillow_action.jpg",
     href: "/projects/refinery-spill",
   },
   {
@@ -25,26 +25,8 @@ const projects = [
     tagColor: "bg-[#D4A017]",
     title: "Environmental Awareness Program",
     desc: "Educating communities on circular economy and environmental stewardship.",
-    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80",
+    image: "/pillow_feather.jpg",
     href: "/projects/awareness",
-  },
-];
-
-const news = [
-  {
-    title: "Herock Envirotech Wins Green Innovation Award 2024",
-    date: "May 10, 2024",
-    image: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=200&q=70",
-  },
-  {
-    title: "New Research Confirms High Efficiency of Feather Sorbents",
-    date: "April 28, 2024",
-    image: "https://images.unsplash.com/photo-1532094349884-543559a56e4b?w=200&q=70",
-  },
-  {
-    title: "Partnership with Maritime Agencies for Cleaner Oceans",
-    date: "April 15, 2024",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&q=70",
   },
 ];
 
@@ -90,36 +72,8 @@ export default function ProjectsAndNews() {
             </div>
           </div>
 
-          {/* Right Column: News + Subscribe */}
-          <div className="flex flex-col gap-8">
-            {/* Latest News */}
-            <div>
-              <div className="flex items-center justify-between mb-5">
-                <h3 className="font-heading font-bold text-[#1F2937] text-base uppercase tracking-wider">
-                  Latest News
-                </h3>
-                <Link href="/news" className="text-[#1E7A46] text-xs font-semibold flex items-center gap-1 hover:gap-2 transition-all">
-                  View All <ArrowRight size={12} />
-                </Link>
-              </div>
-              <div className="flex flex-col gap-4">
-                {news.map((n) => (
-                  <Link key={n.title} href="#" className="flex items-start gap-3 group">
-                    <div
-                      className="w-14 h-14 flex-shrink-0 rounded-lg bg-cover bg-center"
-                      style={{ backgroundImage: `url(${n.image})` }}
-                    />
-                    <div>
-                      <p className="text-sm font-medium text-gray-700 group-hover:text-[#1E7A46] transition-colors leading-tight mb-1">
-                        {n.title}
-                      </p>
-                      <p className="text-xs text-gray-400">{n.date}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
+          {/* Right Column: Subscribe */}
+          <div className="flex flex-col gap-8 justify-center">
             {/* Subscribe */}
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
               <h3 className="font-heading font-bold text-[#1F2937] text-sm uppercase tracking-wider mb-1">
