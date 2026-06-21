@@ -1,14 +1,78 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Target, Eye, Users2, Award, Lightbulb, Shield, Handshake, TrendingUp, Star, Globe } from "lucide-react";
+import SustainableGoals from "@/components/SustainableGoals";
+import Image from "next/image";
+import {
+  Target,
+  Droplets,
+  Cog,
+  Truck,
+  GraduationCap,
+  Shield,
+  Users,
+  Lightbulb,
+  Handshake,
+  Sprout,
+} from "lucide-react";
 
-const values = [
-  { icon: <Lightbulb size={24} />, title: "Innovation", desc: "Pioneering new technologies to solve environmental challenges." },
-  { icon: <Globe size={24} />, title: "Sustainability", desc: "Embedding environmental responsibility in everything we do." },
-  { icon: <Shield size={24} />, title: "Integrity", desc: "Upholding the highest standards of honesty and ethics." },
-  { icon: <TrendingUp size={24} />, title: "Impact", desc: "Measuring success by the positive change we create." },
-  { icon: <Handshake size={24} />, title: "Collaboration", desc: "Partnering with communities, industries, and governments." },
-  { icon: <Star size={24} />, title: "Excellence", desc: "Striving for the highest quality in all our products and services." },
+const objectives = [
+  {
+    number: 1,
+    icon: <Droplets size={22} />,
+    title: "Environmental Remediation & Operations",
+    desc: "Rapid-response oil spill clean-up and wastewater treatment using our Chicken Feather Oil Spill Sorbent Pillow technology.",
+  },
+  {
+    number: 2,
+    icon: <Cog size={22} />,
+    title: "Product Manufacturing & Innovation",
+    desc: "Manufacturing keratin-rich biosorbents from poultry waste, converting agricultural by-products into high-performance environmental solutions.",
+  },
+  {
+    number: 3,
+    icon: <Truck size={22} />,
+    title: "Procurement & Supply",
+    desc: "Supplying biosorbent pillows and spill response equipment to oil and gas operators, industrial facilities, and government agencies.",
+  },
+  {
+    number: 4,
+    icon: <GraduationCap size={22} />,
+    title: "Training",
+    desc: "Professional training programs in biosorbent deployment, spill response protocols, and waste-to-value processing.",
+  },
+];
+
+const irideValues = [
+  {
+    letter: "I",
+    title: "Integrity",
+    desc: "Integrity in every process, decision, and partnership.",
+    icon: <Shield size={18} />,
+  },
+  {
+    letter: "R",
+    title: "Respect",
+    desc: "Respect for people, communities, and the environment.",
+    icon: <Users size={18} />,
+  },
+  {
+    letter: "I",
+    title: "Innovation",
+    desc: "We drive innovation to develop practical and sustainable circular economy solutions.",
+    icon: <Lightbulb size={18} />,
+  },
+  {
+    letter: "D",
+    title: "Dependability",
+    desc: "We deliver reliable, cost-effective products and services that meet the needs of our clients and partners.",
+    icon: <Handshake size={18} />,
+  },
+  {
+    letter: "E",
+    title: "Environmental Stewardship",
+    desc: "The responsible management, protection, and restoration of natural resources and ecosystems.",
+    icon: <Sprout size={18} />,
+  },
 ];
 
 export default function AboutPage() {
@@ -16,91 +80,165 @@ export default function AboutPage() {
     <>
       <Navbar />
       <main className="pt-[102px]">
-        {/* Hero Banner */}
-        <section className="relative bg-[#0E4D2F] py-28 overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center opacity-15" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0E4D2F]/95 to-[#1E7A46]/70" />
-          <div className="relative max-w-7xl mx-auto px-4 text-center text-white">
-            <span className="inline-block bg-white/10 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5">
-              About Us
-            </span>
-            <h1 className="font-heading text-5xl font-black mb-4">Creating Value From Waste</h1>
-            <p className="text-white/60 text-lg max-w-xl mx-auto">
-              Africa&apos;s pioneering circular economy company, turning agricultural by-products into environmental solutions.
+        {/* Hero */}
+        <section className="relative bg-[#0B1A3D] py-20 lg:py-28 overflow-hidden">
+          <div className="relative max-w-7xl mx-auto px-4">
+            <p className="text-[#4ADE80] text-xs font-bold uppercase tracking-[0.2em] mb-4">
+              RC 1731428
+            </p>
+            <h1 className="font-heading text-4xl sm:text-5xl font-black text-white leading-tight max-w-3xl mb-5">
+              Transforming Waste Into{" "}
+              <span className="text-[#4ADE80]">Environmental Solutions</span>
+            </h1>
+            <p className="text-white/60 text-lg max-w-2xl leading-relaxed">
+              Africa&apos;s pioneering circular economy company, turning agricultural
+              by-products into high-performance environmental remediation products.
             </p>
           </div>
         </section>
 
-        {/* Who We Are */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="green-badge mb-4 inline-block">Who We Are</span>
-              <h2 className="section-title mb-5">Herock Envirotech</h2>
-              <p className="text-gray-500 leading-relaxed mb-4">
-                Herock Envirotech is an environmental technology company at the forefront of circular economy innovation.
-                We develop sustainable products from waste materials, specifically converting poultry feather waste into
-                high-performance oil sorbents and other environmental remediation tools.
-              </p>
-              <p className="text-gray-500 leading-relaxed">
-                Founded with a commitment to both environmental protection and economic development, we bridge the gap
-                between agricultural waste management and industrial environmental solutions — creating value at every step.
-              </p>
-            </div>
-            <div className="relative rounded-2xl overflow-hidden h-80 bg-gradient-to-br from-[#0E4D2F] to-[#1E7A46] flex items-center justify-center">
-              <div className="absolute inset-0 bg-cover bg-center opacity-30" />
-              <div className="relative text-center text-white">
-                <Users2 size={48} className="mx-auto mb-3 text-green-300" />
-                <p className="font-heading font-bold text-xl">Building a Greener Future</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Vision & Mission */}
-        <section className="py-20 bg-[#F7FAF8]">
-          <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-10 shadow-sm border border-gray-100">
-              <div className="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center mb-5">
-                <Eye size={24} className="text-[#1E7A46]" />
-              </div>
-              <span className="text-[#D4A017] text-xs font-bold uppercase tracking-widest block mb-2">Our Vision</span>
-              <p className="text-[#1F2937] text-lg font-semibold leading-relaxed">
-                &ldquo;To become Africa&apos;s leading circular economy innovation company, creating sustainable solutions from waste materials.&rdquo;
-              </p>
-            </div>
-            <div className="bg-[#0E4D2F] rounded-2xl p-10 shadow-sm">
-              <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-5">
-                <Target size={24} className="text-green-300" />
-              </div>
-              <span className="text-green-400 text-xs font-bold uppercase tracking-widest block mb-2">Our Mission</span>
-              <p className="text-white text-lg font-semibold leading-relaxed">
-                &ldquo;To develop environmentally responsible products and technologies that convert waste into valuable products while solving critical environmental and societal problems.&rdquo;
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Core Values */}
+        {/* About + Mission */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-12">
-              <span className="green-badge mb-4 inline-block">What We Stand For</span>
-              <h2 className="section-title">Our Core Values</h2>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {values.map((v, i) => (
-                <div key={v.title} className="card p-7">
-                  <div className="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center mb-4 text-[#1E7A46]">
-                    {v.icon}
-                  </div>
-                  <h3 className="font-heading font-bold text-[#1F2937] text-lg mb-2">{v.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-[#1E7A46] text-lg">🌿</span>
+                  <h2 className="font-heading text-xl font-black text-[#0B1A3D] uppercase tracking-wider">
+                    About Us
+                  </h2>
+                  <div className="flex-1 h-0.5 bg-[#1E7A46]/30" />
                 </div>
-              ))}
+                <div className="space-y-4 text-gray-600 leading-relaxed">
+                  <p>
+                    Herock Envirotech Ltd. is a Nigerian cleantech company focused on
+                    transforming agricultural waste into high-performance environmental
+                    solutions. We develop and manufacture the Chicken Feather Oil Spill
+                    Sorbent Pillow — a biodegradable, cost-effective alternative to
+                    conventional oil absorbents.
+                  </p>
+                  <p>
+                    By converting poultry feather waste into functional sorbents, we
+                    address two critical challenges: agricultural waste management and
+                    oil spill remediation — creating value at every step of the circular
+                    economy.
+                  </p>
+                </div>
+
+                <div className="mt-10 pt-8 border-t border-gray-100">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Target size={20} className="text-[#0B1A3D]" />
+                    <h2 className="font-heading text-xl font-black text-[#0B1A3D] uppercase tracking-wider">
+                      Mission
+                    </h2>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    To build Africa&apos;s circular economy by developing environmentally
+                    responsible products and technologies that convert waste into valuable
+                    solutions — protecting our blue economy through science and innovation.
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] bg-[#F7FAF8]">
+                  <Image
+                    src="/pillow_action.jpg"
+                    alt="Herock Envirotech Oil Absorbent Pillows"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="absolute -bottom-4 -right-4 bg-[#1E7A46] text-white rounded-xl px-5 py-3 shadow-lg">
+                  <p className="text-[10px] font-bold uppercase tracking-widest opacity-80">
+                    Flagship Product
+                  </p>
+                  <p className="font-heading font-bold text-sm">
+                    Oil Absorbent Pillows
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
+
+        {/* Strategic Objectives + I-RIDE */}
+        <section className="py-20 bg-[#F7FAF8]">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid lg:grid-cols-[1.4fr_1fr] gap-12 lg:gap-16">
+              {/* Strategic Objectives */}
+              <div>
+                <h2 className="font-heading text-2xl font-black text-[#0B1A3D] uppercase tracking-wide mb-2">
+                  Strategic Objectives
+                </h2>
+                <p className="text-gray-500 text-sm mb-8 max-w-lg">
+                  Our core business areas driving environmental impact and circular
+                  economy innovation across Nigeria and beyond.
+                </p>
+
+                <div className="space-y-5">
+                  {objectives.map((obj) => (
+                    <div
+                      key={obj.number}
+                      className="flex gap-4 bg-white rounded-2xl p-6 shadow-sm border border-gray-100"
+                    >
+                      <div className="flex-shrink-0 w-11 h-11 rounded-full bg-[#0B1A3D] text-white flex items-center justify-center font-heading font-black text-sm">
+                        {obj.number}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-1.5">
+                          <span className="text-[#1E7A46]">{obj.icon}</span>
+                          <h3 className="font-heading font-bold text-[#0B1A3D] text-sm uppercase tracking-wide">
+                            {obj.title}
+                          </h3>
+                        </div>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {obj.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* I-RIDE Values */}
+              <div>
+                <h2 className="font-heading text-2xl font-black text-[#0B1A3D] uppercase tracking-wide mb-2">
+                  Our Values
+                </h2>
+                <p className="text-[#1E7A46] font-heading font-black text-lg mb-8 tracking-widest">
+                  I-RIDE
+                </p>
+
+                <div className="space-y-4">
+                  {irideValues.map((v) => (
+                    <div
+                      key={v.title}
+                      className="flex gap-3 bg-white rounded-xl p-4 shadow-sm border border-gray-100"
+                    >
+                      <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-[#0B1A3D] text-white flex items-center justify-center">
+                        {v.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-heading font-bold text-[#0B1A3D] text-sm mb-0.5">
+                          <span className="text-[#1E7A46]">{v.letter}</span>
+                          {" — "}
+                          {v.title}
+                        </h3>
+                        <p className="text-gray-600 text-xs leading-relaxed">
+                          {v.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <SustainableGoals />
       </main>
       <Footer />
     </>

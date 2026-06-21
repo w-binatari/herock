@@ -82,7 +82,7 @@ export default function ProductsPage() {
               {/* Image */}
               <div className="relative rounded-2xl overflow-hidden aspect-square bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
                 <img 
-                  src="/pillow_feather.jpg" 
+                  src="/pillow_spill.jpg" 
                   alt="Chicken Feather Oil Spill Sorbent Pillow"
                   className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
                 />

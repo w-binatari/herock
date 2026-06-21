@@ -1,11 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Droplets, Recycle, ArrowRight } from "lucide-react";
+import { Droplets, Recycle } from "lucide-react";
 
 export default function Hero() {
   return (
     <section className="relative bg-[#0B1A3D] overflow-hidden">
-      {/* Subtle texture overlay */}
       <div
         className="absolute inset-0 opacity-[0.04]"
         style={{
@@ -14,7 +13,6 @@ export default function Hero() {
       />
 
       <div className="relative max-w-7xl mx-auto px-4 py-16 lg:py-24">
-        {/* Service pills */}
         <div className="flex flex-wrap gap-3 mb-10">
           <span className="inline-flex items-center gap-2 bg-[#1E7A46] text-white text-xs font-bold px-5 py-2.5 rounded-full uppercase tracking-wider">
             <Droplets size={14} />
@@ -27,7 +25,6 @@ export default function Hero() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left — Headline */}
           <div>
             <h1 className="font-heading text-3xl sm:text-4xl xl:text-[2.75rem] font-black leading-[1.15] text-white mb-6">
               TRANSFORMING{" "}
@@ -52,23 +49,16 @@ export default function Hero() {
               <Link href="/products" className="btn-outline">
                 Our Products
               </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-1.5 text-white/80 hover:text-white text-sm font-semibold transition-colors"
-              >
-                Partner With Us <ArrowRight size={14} />
-              </Link>
             </div>
           </div>
 
-          {/* Right — Product image */}
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative w-full max-w-lg">
               <div className="absolute -inset-4 bg-[#1E7A46]/20 rounded-3xl blur-2xl" />
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-white">
                 <Image
-                  src="/pillow_feather.jpg"
-                  alt="Chicken Feather Oil Spill Sorbent Pillow"
+                  src="/pillow_spill.jpg"
+                  alt="Herock Envirotech Oil Absorbent Pillows"
                   width={600}
                   height={450}
                   className="w-full h-auto object-cover"
