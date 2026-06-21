@@ -22,7 +22,7 @@ const navLinks = [
     label: "Products",
     href: "/products",
     children: [
-      { label: "Feather Clean-Sorbent Pillow", href: "/products#sorbent-pillow" },
+      { label: "Chicken Feather Oil Pillow", href: "/products#sorbent-pillow" },
     ],
   },
   { label: "Sustainability", href: "/sustainability" },

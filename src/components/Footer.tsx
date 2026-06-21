@@ -10,31 +10,21 @@ const footerLinks = {
     { label: "About Us", href: "/about" },
     { label: "Solutions", href: "/solutions" },
     { label: "Products", href: "/products" },
-    { label: "Projects", href: "/projects" },
+    { label: "Sustainability", href: "/sustainability" },
     { label: "Contact Us", href: "/contact" },
   ],
   solutions: [
     { label: "Oil Spill Response", href: "/solutions#oil-spill" },
     { label: "Water Pollution Control", href: "/solutions#water-pollution" },
-    { label: "Industrial Waste Management", href: "/solutions#industrial" },
-    { label: "Environmental Restoration", href: "/solutions#restoration" },
-  ],
-  resources: [
-    { label: "Blog", href: "/blog" },
-    { label: "Case Studies", href: "/case-studies" },
-    { label: "Downloads", href: "/downloads" },
-    { label: "FAQs", href: "/faqs" },
-    { label: "News", href: "/news" },
+    { label: "Industrial Wastewater", href: "/solutions#industrial" },
   ],
 };
 
 export default function Footer() {
   return (
     <footer className="bg-[#0B1A3D] text-white">
-      {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 pt-16 pb-10">
-        <div className="grid grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1.2fr] gap-10">
-          {/* Column 1 - Company */}
+        <div className="grid grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.2fr] gap-10">
           <div className="col-span-2 lg:col-span-1">
             <Image
               src="/navbar_logo.png"
@@ -48,7 +38,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Column 2 - Quick Links */}
           <div>
             <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Quick Links</h4>
             <ul className="space-y-2.5">
@@ -62,7 +51,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3 - Solutions */}
           <div>
             <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Our Solutions</h4>
             <ul className="space-y-2.5">
@@ -76,21 +64,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4 - Resources */}
-          <div>
-            <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Resources</h4>
-            <ul className="space-y-2.5">
-              {footerLinks.resources.map((l) => (
-                <li key={l.label}>
-                  <Link href={l.href} className="text-white/50 hover:text-[#4ADE80] text-xs transition-colors">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 5 - Contact */}
           <div className="col-span-2 lg:col-span-1">
             <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Contact Us</h4>
             <ul className="space-y-3">
@@ -115,21 +88,17 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-white/40 text-xs">
-            © 2026 Herock Envirotech Ltd. All Rights Reserved.
-          </p>
-          <div className="flex items-center gap-5">
-            <Link href="/privacy" className="text-white/40 hover:text-white/70 text-xs transition-colors">
-              Privacy Policy
-            </Link>
-            <span className="text-white/20">|</span>
-            <Link href="/terms" className="text-white/40 hover:text-white/70 text-xs transition-colors">
-              Terms of Use
-            </Link>
+          <div>
+            <p className="text-white/40 text-xs">
+              © 2026 Herock Envirotech Ltd. All Rights Reserved.
+            </p>
+            <p className="text-white/25 text-[10px] mt-1">Site build: innovation-competition-v2</p>
           </div>
+          <Link href="/contact" className="text-white/40 hover:text-white/70 text-xs transition-colors">
+            Contact
+          </Link>
         </div>
       </div>
     </footer>
