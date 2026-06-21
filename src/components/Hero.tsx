@@ -39,7 +39,7 @@ export default function Hero() {
               Herock Envirotech is a Nigerian cleantech startup turning agricultural
               waste into biodegradable, low-cost products that restore ecosystems and
               create economic value — starting with our flagship Chicken Feather Oil
-              Spill Sorbent Pillow.
+              Pillow (CFOP), a scientifically validated oil sorbent.
             </p>
 
             <div className="flex flex-wrap gap-3">

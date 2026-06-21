@@ -163,6 +163,37 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Project Objectives */}
+        <section className="py-20 bg-white border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="font-heading text-2xl font-black text-[#0B1A3D] uppercase tracking-wide mb-3">
+              Project Objectives
+            </h2>
+            <p className="text-gray-500 text-sm mb-8 max-w-2xl">
+              The Chicken Feather Oil Pillow project aims to deliver environmental,
+              economic, and social impact across Nigeria&apos;s blue economy.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                "Promote locally sourced materials in oil sorbent manufacturing",
+                "Reduce the cost of oil spill cleanup operations",
+                "Create employment opportunities through commercialization",
+                "Encourage sustainable waste management by repurposing poultry waste",
+                "Support local content development",
+                "Advance circular economy principles",
+              ].map((obj) => (
+                <div
+                  key={obj}
+                  className="flex items-start gap-3 bg-[#F7FAF8] rounded-xl p-5 border border-gray-100"
+                >
+                  <span className="flex-shrink-0 w-2 h-2 rounded-full bg-[#1E7A46] mt-2" />
+                  <span className="text-gray-600 text-sm leading-relaxed">{obj}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Strategic Objectives + I-RIDE */}
         <section className="py-20 bg-[#F7FAF8]">
           <div className="max-w-7xl mx-auto px-4">

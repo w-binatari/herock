@@ -16,13 +16,13 @@ export default function AboutPreview() {
               <div className="flex-1 h-0.5 bg-[#1E7A46]/30" />
             </div>
             <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
-              <p>
-                Herock Envirotech Ltd. is a Nigerian cleantech company focused on
-                transforming agricultural waste into high-performance environmental
-                solutions. We develop and manufacture the Chicken Feather Oil Spill
-                Sorbent Pillow — a biodegradable, cost-effective alternative to
-                conventional oil absorbents.
-              </p>
+                  <p>
+                    Herock Envirotech Ltd. is a Nigerian cleantech company focused on
+                    transforming agricultural waste into high-performance environmental
+                    solutions. We develop and manufacture the Chicken Feather Oil Pillow
+                    (CFOP) — a biodegradable, cost-effective alternative to conventional
+                    oil absorbents, validated at TRL 7.
+                  </p>
               <p>
                 By converting poultry feather waste into functional sorbents, we
                 address two critical challenges: agricultural waste management and
