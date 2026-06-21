@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Mail, Clock, Share2, MessageCircle, Video, Instagram, Facebook, AlertTriangle, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const footerLinks = {
   quickLinks: [
@@ -27,14 +27,6 @@ const footerLinks = {
     { label: "News", href: "/news" },
   ],
 };
-
-const socialLinks = [
-  { icon: <Share2 size={14} />, href: "#", label: "LinkedIn" },
-  { icon: <MessageCircle size={14} />, href: "#", label: "Twitter / X" },
-  { icon: <Video size={14} />, href: "#", label: "YouTube" },
-  { icon: <Instagram size={14} />, href: "#", label: "Instagram" },
-  { icon: <Facebook size={14} />, href: "#", label: "Facebook" },
-];
 
 export default function Footer() {
   return (
@@ -98,10 +90,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 5 - Contact + Emergency */}
+          {/* Column 5 - Contact */}
           <div className="col-span-2 lg:col-span-1">
             <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Contact Us</h4>
-            <ul className="space-y-3 mb-6">
+            <ul className="space-y-3">
               <li className="flex items-start gap-2 text-white/50 text-xs">
                 <MapPin size={12} className="mt-0.5 flex-shrink-0 text-[#4ADE80]" />
                 <span>41, Mbonu Street, D/Line, Port Harcourt, Nigeria.</span>
@@ -119,22 +111,6 @@ export default function Footer() {
                 <span>Mon - Fri: 8:00AM - 5:00PM</span>
               </li>
             </ul>
-
-            {/* Emergency Box */}
-            <div className="bg-[#1E7A46]/20 border border-[#1E7A46]/40 rounded-xl p-4">
-              <div className="flex items-center gap-2 mb-2">
-                <AlertTriangle size={14} className="text-[#4ADE80]" />
-                <h5 className="text-white text-xs font-bold uppercase tracking-wider">Emergency Response</h5>
-              </div>
-              <p className="text-white/50 text-xs mb-3">For oil spill emergencies and urgent support.</p>
-              <p className="text-white font-black text-base mb-3">+234 803 000 1122</p>
-              <Link
-                href="/contact"
-                className="bg-[#1E7A46] hover:bg-green-500 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5 w-fit uppercase tracking-wider"
-              >
-                Report a Spill <ArrowRight size={12} />
-              </Link>
-            </div>
           </div>
         </div>
       </div>
