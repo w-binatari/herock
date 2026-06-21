@@ -38,7 +38,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0A3D21] text-white">
+    <footer className="bg-[#0B1A3D] text-white">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 pt-16 pb-10">
         <div className="grid grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1.2fr] gap-10">
@@ -143,7 +143,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-white/40 text-xs">
-            © 2024 Herock Envirotech. All Rights Reserved.
+            © 2026 Herock Envirotech Ltd. All Rights Reserved.
           </p>
           <div className="flex items-center gap-5">
             <Link href="/privacy" className="text-white/40 hover:text-white/70 text-xs transition-colors">

@@ -43,8 +43,10 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex flex-col">
-      <div className="bg-[#0E4D2F] text-white text-xs py-2 px-4 hidden md:flex items-center justify-between">
+      <div className="bg-[#0B1A3D] text-white text-xs py-2 px-4 hidden md:flex items-center justify-between">
         <div className="flex items-center gap-6">
+          <span className="text-white/50 font-medium tracking-wider">RC 1731428</span>
+          <span className="text-white/20">|</span>
           <a href="tel:+2349015384177" className="flex items-center gap-1.5 hover:text-green-300 transition-colors">
             <Phone size={11} />
             <span>+234 (0) 901 538 4177</span>
