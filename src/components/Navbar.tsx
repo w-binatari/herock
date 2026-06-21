@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, Phone, Mail, Search } from "lucide-react";
+import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -116,13 +116,6 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-          </div>
-
-          {/* Right Side */}
-          <div className="hidden lg:flex items-center gap-3">
-            <button aria-label="Search" className="p-2 text-gray-500 hover:text-[#1E7A46] transition-colors">
-              <Search size={18} />
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
