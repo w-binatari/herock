@@ -60,7 +60,7 @@ export default function FlagshipProduct() {
                 View Product Details
               </Link>
               <Link href="/contact" className="btn-outline-green">
-                Request a Sample
+                Partner With Us
               </Link>
               <button className="flex items-center gap-2 text-[#1E7A46] text-sm font-semibold hover:underline">
                 <Download size={16} />

@@ -48,8 +48,8 @@ export default function FirstResponseKit() {
               ))}
             </div>
 
-            <Link href="/contact" className="btn-primary inline-flex">
-              Request a Kit <ArrowRight size={14} />
+            <Link href="/products" className="btn-primary inline-flex">
+              View Product Details <ArrowRight size={14} />
             </Link>
           </div>
         </div>

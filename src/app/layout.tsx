@@ -17,7 +17,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Herock Envirotech | Turning Waste Into Environmental Solutions",
   description:
-    "Herock Envirotech develops circular economy technologies converting poultry feather waste into sustainable products for pollution control and environmental restoration.",
+    "Herock Envirotech converts poultry feather waste into biodegradable oil spill sorbent pillows — a circular economy innovation protecting Nigeria's blue economy.",
   keywords: [
     "oil spill sorbent",
     "chicken feather pillow",

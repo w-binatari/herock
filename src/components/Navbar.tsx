@@ -56,11 +56,6 @@ export default function Navbar() {
             <span>herockenvirotech@gmail.com</span>
           </a>
         </div>
-        <div className="flex items-center gap-3">
-          <a href="/contact" className="ml-3 bg-[#1E7A46] hover:bg-green-600 text-white text-xs font-bold px-4 py-1.5 rounded transition-colors uppercase tracking-wider">
-            Request a Sample
-          </a>
-        </div>
       </div>
 
       {/* Main Nav */}
@@ -168,9 +163,6 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            <a href="/contact" className="mt-4 btn-primary w-full text-center justify-center">
-              Request a Sample
-            </a>
           </div>
         )}
       </nav>
