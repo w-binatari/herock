@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SustainableGoals from "@/components/SustainableGoals";
+import ProjectObjectives from "@/components/ProjectObjectives";
 import Image from "next/image";
 import {
   Target,
@@ -82,6 +83,8 @@ export default function AboutPage() {
       <main className="pt-[102px]">
         {/* Hero */}
         <section className="relative bg-[#0B1A3D] py-20 lg:py-28 overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#1E7A46]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#4ADE80]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4 pointer-events-none" />
           <div className="relative max-w-7xl mx-auto px-4">
             <p className="text-[#4ADE80] text-xs font-bold uppercase tracking-[0.2em] mb-4">
               RC 1731428
@@ -164,35 +167,7 @@ export default function AboutPage() {
         </section>
 
         {/* Project Objectives */}
-        <section className="py-20 bg-white border-t border-gray-100">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="font-heading text-2xl font-black text-[#0B1A3D] uppercase tracking-wide mb-3">
-              Project Objectives
-            </h2>
-            <p className="text-gray-500 text-sm mb-8 max-w-2xl">
-              The Chicken Feather Oil Pillow project aims to deliver environmental,
-              economic, and social impact across Nigeria&apos;s blue economy.
-            </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                "Promote locally sourced materials in oil sorbent manufacturing",
-                "Reduce the cost of oil spill cleanup operations",
-                "Create employment opportunities through commercialization",
-                "Encourage sustainable waste management by repurposing poultry waste",
-                "Support local content development",
-                "Advance circular economy principles",
-              ].map((obj) => (
-                <div
-                  key={obj}
-                  className="flex items-start gap-3 bg-[#F7FAF8] rounded-xl p-5 border border-gray-100"
-                >
-                  <span className="flex-shrink-0 w-2 h-2 rounded-full bg-[#1E7A46] mt-2" />
-                  <span className="text-gray-600 text-sm leading-relaxed">{obj}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ProjectObjectives />
 
         {/* Strategic Objectives + I-RIDE */}
         <section className="py-20 bg-[#F7FAF8]">
@@ -212,7 +187,7 @@ export default function AboutPage() {
                   {objectives.map((obj) => (
                     <div
                       key={obj.number}
-                      className="flex gap-4 bg-white rounded-2xl p-6 shadow-sm border border-gray-100"
+                      className="flex gap-4 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-[#1E7A46]/20 hover:-translate-y-0.5 transition-all duration-300"
                     >
                       <div className="flex-shrink-0 w-11 h-11 rounded-full bg-[#0B1A3D] text-white flex items-center justify-center font-heading font-black text-sm">
                         {obj.number}
@@ -246,7 +221,7 @@ export default function AboutPage() {
                   {irideValues.map((v) => (
                     <div
                       key={v.title}
-                      className="flex gap-3 bg-white rounded-xl p-4 shadow-sm border border-gray-100"
+                      className="flex gap-3 bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:shadow-md hover:border-[#1E7A46]/20 transition-all duration-300"
                     >
                       <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-[#0B1A3D] text-white flex items-center justify-center">
                         {v.icon}
