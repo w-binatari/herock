@@ -20,10 +20,11 @@ export default function NewsHighlight() {
     [
       "/news/nae-2026/event-4.jpg",
       "/news/nae-2026/event-2.jpg",
+      "/news/nae-2026/presentation-1.jpg",
       "/news/nae-2026/product-2.jpg",
       article.coverImage,
     ],
-    "/news/nae-2026/product-2.jpg"
+    "/news/nae-2026/event-4.jpg"
   );
 
   return (

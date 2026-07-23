@@ -3,19 +3,14 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { getArticle, newsArticles } from "@/data/news";
 import {
-  existingPublicImages,
-  firstExistingPublicImage,
-} from "@/lib/publicImages";
-import {
-  ArrowLeft,
-  Award,
-  Calendar,
-  MapPin,
-  Trophy,
-  Sparkles,
-} from "lucide-react";
+  getArticle,
+  newsArticles,
+  type ArticleBlock,
+  type NewsImage,
+} from "@/data/news";
+import { existingPublicImages } from "@/lib/publicImages";
+import { ArrowLeft, Award } from "lucide-react";
 
 export function generateStaticParams() {
   return newsArticles.map((a) => ({ slug: a.slug }));
@@ -35,67 +30,153 @@ export async function generateMetadata({
   };
 }
 
-function Gallery({
-  title,
-  subtitle,
-  images,
+function Figure({
+  src,
+  alt,
+  caption,
+  large,
 }: {
-  title: string;
-  subtitle?: string;
-  images: { src: string; alt: string; caption?: string }[];
+  src: string;
+  alt: string;
+  caption?: string;
+  large?: boolean;
 }) {
-  if (images.length === 0) return null;
-
   return (
-    <section className="mt-14">
-      <h2 className="font-heading text-xl sm:text-2xl font-black text-[#0B1A3D] uppercase tracking-wide mb-2">
-        {title}
-      </h2>
-      {subtitle && (
-        <p className="text-gray-500 text-sm mb-6 max-w-2xl">{subtitle}</p>
-      )}
+    <figure className={`my-8 sm:my-10 ${large ? "-mx-4 sm:mx-0" : ""}`}>
       <div
-        className={`grid gap-3 sm:gap-4 ${
-          images.length === 1
-            ? "grid-cols-1"
-            : images.length === 2
-              ? "grid-cols-1 sm:grid-cols-2"
-              : "grid-cols-2 lg:grid-cols-3"
+        className={`relative overflow-hidden bg-[#F7FAF8] ${
+          large
+            ? "aspect-[16/10] sm:rounded-2xl"
+            : "aspect-[16/10] rounded-xl sm:rounded-2xl"
         }`}
       >
-        {images.map((img, i) => (
-          <figure
-            key={img.src}
-            className={`relative overflow-hidden rounded-xl bg-[#F7FAF8] border border-gray-100 group ${
-              i === 0 && images.length >= 3 ? "sm:col-span-2 sm:row-span-2" : ""
-            }`}
-          >
-            <div
-              className={`relative w-full ${
-                i === 0 && images.length >= 3
-                  ? "aspect-[4/3] sm:aspect-auto sm:h-full sm:min-h-[320px]"
-                  : "aspect-[4/3]"
-              }`}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              />
-            </div>
-            {img.caption && (
-              <figcaption className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8">
-                <p className="text-white/90 text-xs leading-snug">
-                  {img.caption}
-                </p>
-              </figcaption>
-            )}
-          </figure>
-        ))}
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
       </div>
-    </section>
+      {caption && (
+        <figcaption className="mt-3 text-sm text-gray-500 leading-relaxed px-1">
+          {caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
+function Gallery({ images }: { images: NewsImage[] }) {
+  const visible = existingPublicImages(images);
+  if (visible.length === 0) return null;
+
+  return (
+    <div
+      className={`my-8 sm:my-10 grid gap-3 sm:gap-4 ${
+        visible.length === 1
+          ? "grid-cols-1"
+          : visible.length === 2
+            ? "grid-cols-1 sm:grid-cols-2"
+            : "grid-cols-1 sm:grid-cols-3"
+      }`}
+    >
+      {visible.map((img) => (
+        <figure key={img.src} className="min-w-0">
+          <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-[#F7FAF8]">
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 640px) 100vw, 33vw"
+            />
+          </div>
+          {img.caption && (
+            <figcaption className="mt-2 text-xs text-gray-500 leading-relaxed">
+              {img.caption}
+            </figcaption>
+          )}
+        </figure>
+      ))}
+    </div>
+  );
+}
+
+function ArticleBlocks({ blocks }: { blocks: ArticleBlock[] }) {
+  return (
+    <div className="article-body">
+      {blocks.map((block, i) => {
+        switch (block.type) {
+          case "p":
+            return (
+              <p
+                key={i}
+                className="text-gray-700 text-[1.05rem] sm:text-lg leading-[1.75] mb-5"
+              >
+                {block.text}
+              </p>
+            );
+          case "h2":
+            return (
+              <h2
+                key={i}
+                className="font-heading text-2xl sm:text-3xl font-black text-[#0B1A3D] mt-12 mb-5 tracking-tight"
+              >
+                {block.text}
+              </h2>
+            );
+          case "quote":
+            return (
+              <blockquote
+                key={i}
+                className="my-10 border-l-4 border-[#1E7A46] pl-5 sm:pl-6 py-1"
+              >
+                <p className="font-heading text-xl sm:text-2xl font-bold text-[#0B1A3D] italic leading-snug">
+                  {block.text}
+                </p>
+              </blockquote>
+            );
+          case "figure":
+            return (
+              <Figure
+                key={i}
+                src={block.src}
+                alt={block.alt}
+                caption={block.caption}
+                large
+              />
+            );
+          case "gallery":
+            return <Gallery key={i} images={block.images} />;
+          case "facts":
+            return (
+              <aside
+                key={i}
+                className="my-10 rounded-2xl bg-[#0B1A3D] text-white p-6 sm:p-8"
+              >
+                <p className="text-[#4ADE80] text-[10px] font-bold uppercase tracking-[0.2em] mb-5">
+                  At a glance
+                </p>
+                <dl className="grid sm:grid-cols-2 gap-5">
+                  {block.items.map((item) => (
+                    <div key={item.label}>
+                      <dt className="text-white/45 text-[10px] font-bold uppercase tracking-widest mb-1">
+                        {item.label}
+                      </dt>
+                      <dd className="text-white text-sm sm:text-base font-semibold leading-snug">
+                        {item.value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </aside>
+            );
+          default:
+            return null;
+        }
+      })}
+    </div>
   );
 }
 
@@ -108,190 +189,89 @@ export default async function NewsArticlePage({
   const article = getArticle(slug);
   if (!article) notFound();
 
-  const productImages = existingPublicImages(article.productImages);
-  const eventImages = existingPublicImages(article.eventImages);
-  const presentationImages = existingPublicImages(article.presentationImages);
-  const cover = firstExistingPublicImage(
-    [
-      "/news/nae-2026/event-4.jpg",
-      "/news/nae-2026/event-2.jpg",
-      "/news/nae-2026/presentation-5.jpg",
-      article.coverImage,
-      ...productImages.map((i) => i.src),
-    ],
-    "/news/nae-2026/product-2.jpg"
-  );
+  const coverExists = existingPublicImages([
+    { src: article.coverImage, alt: article.title },
+  ]).length > 0;
+  const cover = coverExists
+    ? article.coverImage
+    : existingPublicImages(article.eventImages)[0]?.src ||
+      existingPublicImages(article.productImages)[0]?.src ||
+      "/news/nae-2026/product-2.jpg";
 
   return (
     <>
       <Navbar />
-      <main className="pt-[102px]">
-        {/* Hero */}
-        <section className="relative bg-[#0B1A3D] overflow-hidden">
-          <div className="absolute inset-0">
-            <Image
-              src={cover}
-              alt=""
-              fill
-              className="object-cover opacity-35"
-              sizes="100vw"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0B1A3D] via-[#0B1A3D]/92 to-[#0B1A3D]/70" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1A3D] via-transparent to-[#0B1A3D]/40" />
-          </div>
-
-          <div className="relative max-w-7xl mx-auto px-4 py-14 lg:py-20">
+      <main className="pt-[102px] bg-white">
+        {/* Article header */}
+        <header className="border-b border-gray-100">
+          <div className="max-w-3xl mx-auto px-4 pt-10 pb-8 sm:pt-14 sm:pb-10">
             <Link
               href="/news"
-              className="inline-flex items-center gap-1.5 text-white/50 hover:text-[#4ADE80] text-sm mb-8 transition-colors"
+              className="inline-flex items-center gap-1.5 text-gray-400 hover:text-[#1E7A46] text-sm mb-8 transition-colors"
             >
-              <ArrowLeft size={14} /> Back to News
+              <ArrowLeft size={14} /> News
             </Link>
 
-            <span className="inline-flex items-center gap-2 bg-[#1E7A46] text-white text-[10px] sm:text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider mb-6 shadow-lg shadow-[#1E7A46]/30">
-              <Award size={13} />
+            <span className="inline-flex items-center gap-2 bg-[#1E7A46]/10 text-[#1E7A46] text-[10px] sm:text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-5">
+              <Award size={12} />
               {article.badge}
             </span>
 
-            <h1 className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-black text-white leading-tight max-w-4xl mb-5">
+            <h1 className="font-heading text-3xl sm:text-4xl lg:text-[2.65rem] font-black text-[#0B1A3D] leading-[1.15] mb-5">
               {article.title}
             </h1>
 
-            <p className="text-[#4ADE80] text-lg sm:text-xl italic max-w-2xl mb-8">
+            <p className="text-[#1E7A46] text-lg sm:text-xl italic leading-relaxed mb-6">
               {article.oneLiner}
             </p>
 
-            <div className="flex flex-wrap gap-4 text-sm text-white/60">
-              <span className="inline-flex items-center gap-1.5">
-                <Calendar size={14} className="text-[#4ADE80]" />
-                {article.dateLabel}
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-gray-400">
+              <span className="font-semibold text-gray-600">
+                Herock Envirotech
               </span>
-              <span className="text-white/20">|</span>
-              <span className="inline-flex items-center gap-1.5">
-                <MapPin size={14} className="text-[#4ADE80]" />
-                {article.eventVenue}
-              </span>
+              <span className="text-gray-300">·</span>
+              <time>{article.publishedLabel}</time>
+              <span className="text-gray-300">·</span>
+              <span>{article.eventVenue.split(",")[0]}</span>
             </div>
           </div>
-        </section>
+        </header>
 
-        {/* Body */}
-        <article className="py-14 lg:py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid lg:grid-cols-[1.4fr_0.85fr] gap-12 lg:gap-16">
-              <div>
-                <div className="space-y-5 text-gray-600 leading-relaxed text-base sm:text-[1.05rem]">
-                  {article.body.map((para) => (
-                    <p key={para.slice(0, 40)}>{para}</p>
-                  ))}
-                </div>
-
-                <div className="mt-10 flex items-start gap-3 bg-[#F7FAF8] border border-[#1E7A46]/15 rounded-2xl p-5 sm:p-6">
-                  <Sparkles
-                    size={20}
-                    className="text-[#1E7A46] flex-shrink-0 mt-0.5"
-                  />
-                  <div>
-                    <p className="font-heading font-bold text-[#0B1A3D] text-sm uppercase tracking-wide mb-1">
-                      Certificate of Merit
-                    </p>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      The Herock Envirotech team has already been awarded a
-                      Certificate of Merit by the Nigerian Academy of Engineering
-                      in recognition of this innovation.
-                    </p>
-                  </div>
-                </div>
-
-                <Gallery
-                  title="The Product"
-                  subtitle="Chicken feather-based biosorbent pillows — turning agricultural waste into oil spill remediation."
-                  images={productImages}
-                />
-
-                <Gallery
-                  title="At the Competition"
-                  subtitle="Moments from the Nigerian Academy of Engineering National Innovation Competition."
-                  images={eventImages}
-                />
-
-                <Gallery
-                  title="Presentation & Engagement"
-                  subtitle="Booth demos, media interviews, and conversations with judges and guests."
-                  images={presentationImages}
-                />
-              </div>
-
-              {/* Sidebar */}
-              <aside className="space-y-5 lg:sticky lg:top-28 self-start">
-                <div className="rounded-2xl bg-[#0B1A3D] text-white p-6 shadow-xl">
-                  <div className="flex items-center gap-2 text-[#4ADE80] mb-4">
-                    <Calendar size={16} />
-                    <span className="text-[10px] font-bold uppercase tracking-widest">
-                      Award Night
-                    </span>
-                  </div>
-                  <p className="font-heading font-black text-xl mb-2">
-                    {article.eventDate}
-                  </p>
-                  <p className="text-white/60 text-sm leading-relaxed flex items-start gap-2">
-                    <MapPin size={14} className="mt-0.5 flex-shrink-0 text-[#4ADE80]" />
-                    {article.eventVenue}
-                  </p>
-                  <p className="text-white/40 text-xs mt-4 leading-relaxed">
-                    Final rankings were announced at the NAE Annual Dinner &amp;
-                    Award Night. Herock Envirotech received a Certificate of Merit.
-                  </p>
-                </div>
-
-                <div className="rounded-2xl bg-[#F7FAF8] border border-gray-100 p-6">
-                  <div className="flex items-center gap-2 text-[#1E7A46] mb-4">
-                    <Trophy size={16} />
-                    <span className="text-[10px] font-bold uppercase tracking-widest">
-                      Prize Pool
-                    </span>
-                  </div>
-                  <ul className="space-y-3">
-                    {article.prizes.map((p, i) => (
-                      <li
-                        key={p.place}
-                        className="flex items-center justify-between gap-3 pb-3 border-b border-gray-200 last:border-0 last:pb-0"
-                      >
-                        <span className="text-gray-600 text-sm">
-                          <span className="font-heading font-bold text-[#0B1A3D] mr-2">
-                            {i + 1}.
-                          </span>
-                          {p.place}
-                        </span>
-                        <span className="font-heading font-black text-[#1E7A46] text-lg">
-                          {p.amount}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="rounded-2xl border border-[#1E7A46]/20 bg-white p-6">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#1E7A46] mb-2">
-                    The Innovation
-                  </p>
-                  <p className="font-heading font-bold text-[#0B1A3D] text-sm mb-2">
-                    Chicken Feather Oil Pillow (CFOP)
-                  </p>
-                  <p className="text-gray-500 text-xs leading-relaxed mb-4">
-                    Biodegradable biosorbent pillows made from processed poultry
-                    feathers for sustainable oil spill remediation.
-                  </p>
-                  <Link
-                    href="/products"
-                    className="text-[#1E7A46] text-xs font-bold uppercase tracking-wider hover:underline"
-                  >
-                    View product details →
-                  </Link>
-                </div>
-              </aside>
+        {/* Lead image */}
+        <div className="max-w-5xl mx-auto px-4 pt-8 sm:pt-10">
+          <figure>
+            <div className="relative aspect-[16/9] sm:aspect-[2/1] rounded-2xl overflow-hidden shadow-lg bg-[#0B1A3D]">
+              <Image
+                src={cover}
+                alt={article.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                priority
+              />
             </div>
+            {article.coverCaption && (
+              <figcaption className="mt-3 text-sm text-gray-500 max-w-3xl mx-auto px-1">
+                {article.coverCaption}
+              </figcaption>
+            )}
+          </figure>
+        </div>
+
+        {/* Article body */}
+        <article className="max-w-3xl mx-auto px-4 py-10 sm:py-14">
+          <ArticleBlocks blocks={article.blocks} />
+
+          <div className="mt-14 pt-8 border-t border-gray-100">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#1E7A46] mb-2">
+              Related
+            </p>
+            <Link
+              href="/products"
+              className="font-heading font-bold text-[#0B1A3D] hover:text-[#1E7A46] transition-colors"
+            >
+              Learn more about the Chicken Feather Oil Pillow →
+            </Link>
           </div>
         </article>
       </main>

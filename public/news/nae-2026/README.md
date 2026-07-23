@@ -1,17 +1,16 @@
-# NAE 2026 news photos
+# NAE 2026 article photos
 
-Drop high-resolution event photos here using these filenames.
-The site auto-detects files that exist and shows them in galleries.
+## Product
+- `product-1.jpg` … `product-3.jpg`
 
-## Product (up to 4)
-- `product-1.jpg` … `product-3.jpg` (committed)
-- `product-4.jpg` (optional)
-
-## Event (main display prefers `event-4.jpg`)
+## Event (cover prefers `event-4.jpg`)
 - `event-1.jpg` — Real MVPs frame
 - `event-2.jpg` — NAE Apex Events backdrop
-- `event-3.jpg` — NAE backdrop (arms crossed)
-- `event-4.jpg` — handshake / dinner recognition (**homepage cover**)
+- `event-3.jpg` — group in Real MVPs frame
+- `event-4.jpg` — Awards Night handshake (article cover)
 
-## Presentation / booth
-- `presentation-1.jpg` … `presentation-7.jpg`
+## Presentation
+- `presentation-1.jpg` — booth demo
+- `presentation-2.jpg` — booth team portrait
+- `presentation-3.jpg` — with APWEN / peers
+- `presentation-4.jpg` — guests at Apex Events banner

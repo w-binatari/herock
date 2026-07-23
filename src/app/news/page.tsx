@@ -44,6 +44,7 @@ export default function NewsIndexPage() {
                   [
                     "/news/nae-2026/event-4.jpg",
                     "/news/nae-2026/event-2.jpg",
+                    "/news/nae-2026/presentation-1.jpg",
                     article.coverImage,
                   ],
                   article.coverImage
