@@ -26,6 +26,7 @@ const navLinks = [
     ],
   },
   { label: "Sustainability", href: "/sustainability" },
+  { label: "News", href: "/news" },
   { label: "Contact Us", href: "/contact" },
 ];
 

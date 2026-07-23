@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import NewsHighlight from "@/components/NewsHighlight";
 import ProductFeatures from "@/components/ProductFeatures";
 import OilAbsorbentPillows from "@/components/OilAbsorbentPillows";
 import FirstResponseKit from "@/components/FirstResponseKit";
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Navbar />
       <main className="pt-[102px]">
         <Hero />
+        <NewsHighlight />
         <ProductFeatures />
         <OilAbsorbentPillows />
         <FirstResponseKit />

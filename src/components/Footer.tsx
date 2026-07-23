@@ -11,6 +11,7 @@ const footerLinks = {
     { label: "Solutions", href: "/solutions" },
     { label: "Products", href: "/products" },
     { label: "Sustainability", href: "/sustainability" },
+    { label: "News", href: "/news" },
     { label: "Contact Us", href: "/contact" },
   ],
   solutions: [
@@ -94,7 +95,7 @@ export default function Footer() {
             <p className="text-white/40 text-xs">
               © 2026 Herock Envirotech Ltd. All Rights Reserved.
             </p>
-            <p className="text-white/25 text-[10px] mt-1">Site build: innovation-competition-v2</p>
+            <p className="text-white/25 text-[10px] mt-1">Site build: nae-top8-news-v3</p>
           </div>
           <Link href="/contact" className="text-white/40 hover:text-white/70 text-xs transition-colors">
             Contact
