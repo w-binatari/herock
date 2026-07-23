@@ -41,9 +41,9 @@ export default function ProductFeatures() {
           {features.map((f) => (
             <div
               key={f.title}
-              className="flex items-start gap-4 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              className="group flex items-start gap-4 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-[#1E7A46]/25 hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#1E7A46] text-white flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#1E7A46] text-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 {f.icon}
               </div>
               <div>
