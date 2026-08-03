@@ -162,30 +162,6 @@ export const newsArticles: NewsArticle[] = [
           },
         ],
       },
-      { type: "h2", text: "From 108 entries to the national top 8" },
-      {
-        type: "p",
-        text: "The Nigerian Academy of Engineering runs its National Innovation Competition to identify and support engineers developing practical solutions to Nigeria’s most pressing challenges. In this third edition, the field was narrowed from 108 applicants to eight national finalists.",
-      },
-      {
-        type: "p",
-        text: "Among them: Herock Envirotech’s chicken feather-based sorbent — recognised for tackling oil spills and poultry waste simultaneously, in support of circular and blue-economy outcomes.",
-      },
-      {
-        type: "facts",
-        items: [
-          { label: "Recognition", value: "Certificate of Merit — NAE" },
-          { label: "Award Night", value: "24 June 2026 · Ikeja, Lagos" },
-          {
-            label: "Venue",
-            value: "Balmoral Convention Centre, Sheraton",
-          },
-          {
-            label: "Prize pool",
-            value: "First ₦12M · Second ₦6M · Third ₦3M",
-          },
-        ],
-      },
       { type: "h2", text: "On the exhibition floor" },
       {
         type: "p",
