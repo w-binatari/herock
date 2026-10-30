@@ -157,10 +157,10 @@ export default function ProductsPage() {
                     <tbody>
                       {specs.map((s, i) => (
                         <tr key={s.field} className={i % 2 === 0 ? "bg-[#F7FAF8]" : "bg-white"}>
-                          <td className="py-3.5 px-5 font-semibold text-gray-700 border-r border-gray-100 w-2/5">
+                          <td className="py-3.5 px-3 sm:px-5 font-semibold text-gray-700 border-r border-gray-100 w-2/5">
                             {s.field}
                           </td>
-                          <td className="py-3.5 px-5 text-gray-500">{s.value}</td>
+                          <td className="py-3.5 px-3 sm:px-5 text-gray-500">{s.value}</td>
                         </tr>
                       ))}
                     </tbody>

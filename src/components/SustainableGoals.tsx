@@ -27,7 +27,7 @@ export default function SustainableGoals() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center gap-4 mb-4">
           <div className="flex-1 h-px bg-[#D4A017]/40" />
-          <h2 className="font-heading text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#0B1A3D] text-center whitespace-nowrap">
+          <h2 className="font-heading text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#0B1A3D] text-center sm:whitespace-nowrap">
             Aligned with the UN Sustainable Development Goals
           </h2>
           <div className="flex-1 h-px bg-[#D4A017]/40" />
