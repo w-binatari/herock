@@ -5,6 +5,8 @@ import { Droplets, Recycle } from "lucide-react";
 export default function Hero() {
   return (
     <section className="relative bg-[#0B1A3D] overflow-hidden">
+      <div className="absolute top-1/4 -left-32 w-80 h-80 bg-[#1E7A46]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#4ADE80]/8 rounded-full blur-3xl translate-x-1/3 pointer-events-none" />
       <div
         className="absolute inset-0 opacity-[0.04]"
         style={{
