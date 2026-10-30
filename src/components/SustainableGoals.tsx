@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const sdgs = [
   {
     number: 9,
@@ -41,15 +43,16 @@ export default function SustainableGoals() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-4xl mx-auto">
           {sdgs.map((sdg) => (
             <div key={sdg.number} className="flex flex-col items-center text-center group">
-              {/* Plain img so locally replaced files in public/sdg/ show immediately */}
               <div className="w-full max-w-[140px] aspect-square shadow-md transition-transform group-hover:scale-105 overflow-hidden rounded-sm">
-                <img
+                <Image
                   src={sdg.image}
                   alt={`UN Sustainable Development Goal ${sdg.number}: ${sdg.title}`}
+                  width={140}
+                  height={140}
                   className="w-full h-full object-contain"
                 />
               </div>
-              <p className="mt-3 text-[#0B1A3D] text-[10px] sm:text-xs font-bold uppercase tracking-wide leading-snug max-w-[140px]">
+              <p className="mt-3 text-[#0B1A3D] text-[11px] sm:text-xs font-bold uppercase tracking-wide leading-snug max-w-[140px]">
                 {sdg.title}
               </p>
             </div>

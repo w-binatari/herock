@@ -1,8 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { ADDRESS, EMAIL, PHONE_DISPLAY, WHATSAPP_URL } from "@/lib/contact";
 
 const footerLinks = {
   quickLinks: [
@@ -70,15 +69,15 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-white/50 text-xs">
                 <MapPin size={12} className="mt-0.5 flex-shrink-0 text-[#4ADE80]" />
-                <span>41, Mbonu Street, D/Line, Port Harcourt, Nigeria.</span>
+                <span>{ADDRESS}</span>
               </li>
               <li className="flex items-center gap-2 text-white/50 text-xs">
                 <Phone size={12} className="flex-shrink-0 text-[#4ADE80]" />
-                <a href="tel:+2349015384177" className="hover:text-[#4ADE80] transition-colors">+234 (0) 901 538 4177</a>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#4ADE80] transition-colors">{PHONE_DISPLAY} (WhatsApp)</a>
               </li>
               <li className="flex items-center gap-2 text-white/50 text-xs">
                 <Mail size={12} className="flex-shrink-0 text-[#4ADE80]" />
-                <a href="mailto:herockenvirotech@gmail.com" className="hover:text-[#4ADE80] transition-colors">herockenvirotech@gmail.com</a>
+                <a href={`mailto:${EMAIL}`} className="hover:text-[#4ADE80] transition-colors">{EMAIL}</a>
               </li>
               <li className="flex items-center gap-2 text-white/50 text-xs">
                 <Clock size={12} className="flex-shrink-0 text-[#4ADE80]" />
@@ -91,12 +90,9 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div>
-            <p className="text-white/40 text-xs">
-              © 2026 Herock Envirotech Ltd. All Rights Reserved.
-            </p>
-            <p className="text-white/25 text-[10px] mt-1">Site build: nae-article-v4</p>
-          </div>
+          <p className="text-white/40 text-xs">
+            © {new Date().getFullYear()} Herock Envirotech Ltd. All Rights Reserved.
+          </p>
           <Link href="/contact" className="text-white/40 hover:text-white/70 text-xs transition-colors">
             Contact
           </Link>

@@ -4,6 +4,14 @@ import PageHero from "@/components/PageHero";
 import Link from "next/link";
 import Image from "next/image";
 import { CheckCircle2, ArrowRight } from "lucide-react";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata(
+  "Solutions",
+  "Oil spill response, water pollution control and industrial wastewater solutions from Herock Envirotech, built from agricultural waste.",
+  "/solutions"
+);
+
 
 const solutions = [
   {
@@ -54,7 +62,7 @@ export default function SolutionsPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-[102px]">
+      <main className="pt-[72px] md:pt-[102px]">
         <PageHero
           eyebrow="Our Solutions"
           title={

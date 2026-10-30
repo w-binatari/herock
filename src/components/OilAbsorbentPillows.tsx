@@ -9,7 +9,7 @@ export default function OilAbsorbentPillows() {
         <div className="grid lg:grid-cols-2 items-center min-h-[480px]">
           {/* Left — Copy */}
           <div className="py-16 lg:py-20 lg:pr-12 relative z-10">
-            <span className="inline-block bg-[#1E7A46] text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
+            <span className="inline-block bg-[#1E7A46] text-white text-[11px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
               Spill Containment Solutions
             </span>
 

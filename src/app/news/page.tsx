@@ -8,18 +8,19 @@ import {
   firstExistingPublicImage,
 } from "@/lib/publicImages";
 import { ArrowRight, Award } from "lucide-react";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
-  title: "News | Herock Envirotech",
-  description:
-    "Latest news and updates from Herock Envirotech — circular innovation for Nigeria's blue economy.",
-};
+export const metadata = pageMetadata(
+  "News",
+  "Latest news and updates from Herock Envirotech — circular innovation for Nigeria's blue economy.",
+  "/news"
+);
 
 export default function NewsIndexPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-[102px]">
+      <main className="pt-[72px] md:pt-[102px]">
         <section className="relative bg-[#0B1A3D] py-16 lg:py-20 overflow-hidden">
           <div className="absolute top-0 right-0 w-80 h-80 bg-[#1E7A46]/15 rounded-full blur-3xl pointer-events-none" />
           <div className="relative max-w-7xl mx-auto px-4">
@@ -71,7 +72,7 @@ export default function NewsIndexPage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-black/10" />
                     </div>
                     <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
-                      <span className="inline-flex items-center gap-2 self-start bg-[#1E7A46]/10 text-[#1E7A46] text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider mb-4">
+                      <span className="inline-flex items-center gap-2 self-start bg-[#1E7A46]/10 text-[#1E7A46] text-[11px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider mb-4">
                         <Award size={12} />
                         {article.badge}
                       </span>

@@ -64,7 +64,7 @@ export default function NewsHighlight() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B1A3D] via-[#0B1A3D]/45 to-transparent" />
             <div className="absolute top-4 left-4 right-4">
-              <span className="inline-flex items-center gap-2 bg-[#1E7A46] text-white text-[10px] sm:text-xs font-bold px-3.5 py-2 rounded-full uppercase tracking-wider shadow-lg">
+              <span className="inline-flex items-center gap-2 bg-[#1E7A46] text-white text-[11px] sm:text-xs font-bold px-3.5 py-2 rounded-full uppercase tracking-wider shadow-lg">
                 <Award size={13} />
                 {article.badge}
               </span>
@@ -89,7 +89,7 @@ export default function NewsHighlight() {
                 <div className="bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/8 transition-colors">
                   <div className="flex items-center gap-2 text-[#4ADE80] mb-1.5">
                     <Award size={14} />
-                    <span className="text-[10px] font-bold uppercase tracking-widest">
+                    <span className="text-[11px] font-bold uppercase tracking-widest">
                       Recognition
                     </span>
                   </div>
@@ -103,7 +103,7 @@ export default function NewsHighlight() {
                 <div className="bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/8 transition-colors">
                   <div className="flex items-center gap-2 text-[#4ADE80] mb-1.5">
                     <Calendar size={14} />
-                    <span className="text-[10px] font-bold uppercase tracking-widest">
+                    <span className="text-[11px] font-bold uppercase tracking-widest">
                       Award Night
                     </span>
                   </div>

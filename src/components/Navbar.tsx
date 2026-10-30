@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react";
+import { EMAIL, PHONE_DISPLAY, WHATSAPP_URL } from "@/lib/contact";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -48,13 +49,13 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
           <span className="text-white/50 font-medium tracking-wider">RC 1731428</span>
           <span className="text-white/20">|</span>
-          <a href="tel:+2349015384177" className="flex items-center gap-1.5 hover:text-green-300 transition-colors">
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-green-300 transition-colors">
             <Phone size={11} />
-            <span>+234 (0) 901 538 4177</span>
+            <span>{PHONE_DISPLAY} (WhatsApp)</span>
           </a>
-          <a href="mailto:herockenvirotech@gmail.com" className="flex items-center gap-1.5 hover:text-green-300 transition-colors">
+          <a href={`mailto:${EMAIL}`} className="flex items-center gap-1.5 hover:text-green-300 transition-colors">
             <Mail size={11} />
-            <span>herockenvirotech@gmail.com</span>
+            <span>{EMAIL}</span>
           </a>
         </div>
       </div>

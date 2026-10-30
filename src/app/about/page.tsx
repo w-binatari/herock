@@ -14,6 +14,14 @@ import {
   Handshake,
   Sprout,
 } from "lucide-react";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata(
+  "About Us",
+  "Herock Envirotech Ltd (RC 1731428) is a Port Harcourt cleantech company turning poultry feather waste into biodegradable oil spill sorbents for Nigeria's blue economy.",
+  "/about"
+);
+
 
 const objectives = [
   {
@@ -79,7 +87,7 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-[102px]">
+      <main className="pt-[72px] md:pt-[102px]">
         {/* Hero */}
         <section className="relative bg-[#0B1A3D] py-20 lg:py-28 overflow-hidden">
           <div className="relative max-w-7xl mx-auto px-4">
@@ -151,7 +159,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-[#1E7A46] text-white rounded-xl px-5 py-3 shadow-lg">
-                  <p className="text-[10px] font-bold uppercase tracking-widest opacity-80">
+                  <p className="text-[11px] font-bold uppercase tracking-widest opacity-80">
                     Flagship Product
                   </p>
                   <p className="font-heading font-bold text-sm">

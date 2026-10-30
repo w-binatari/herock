@@ -10,6 +10,14 @@ import SustainableGoals from "@/components/SustainableGoals";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata(
+  "Chicken Feather Oil Pillow (CFOP)",
+  "The Chicken Feather Oil Pillow is a biodegradable oil sorbent made from processed poultry feathers, available as absorbent pillows and a First Response Kit.",
+  "/products"
+);
+
 
 const howItWorks = [
   {
@@ -61,7 +69,7 @@ export default function ProductsPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-[102px]">
+      <main className="pt-[72px] md:pt-[102px]">
         <PageHero
           eyebrow="Innovation Entry"
           title={

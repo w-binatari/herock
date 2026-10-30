@@ -3,6 +3,14 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import SustainableGoals from "@/components/SustainableGoals";
 import { Recycle, Leaf, Droplets, ArrowRight, Wind, Factory } from "lucide-react";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata(
+  "Sustainability",
+  "How the Chicken Feather Oil Pillow supports UN SDGs 9, 12, 13 and 14 by turning poultry waste into a resource for environmental protection.",
+  "/sustainability"
+);
+
 
 const circularSteps = [
   { step: "Poultry Waste", color: "#D4A017" },
@@ -33,7 +41,7 @@ export default function SustainabilityPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-[102px]">
+      <main className="pt-[72px] md:pt-[102px]">
         <PageHero
           eyebrow="Sustainability"
           title={

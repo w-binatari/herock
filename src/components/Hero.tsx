@@ -12,8 +12,8 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 py-16 lg:py-24">
-        <div className="flex flex-wrap gap-3 mb-10">
+      <div className="relative max-w-7xl mx-auto px-4 py-10 sm:py-16 lg:py-24">
+        <div className="flex flex-wrap gap-2 sm:gap-3 mb-7 sm:mb-10">
           <span className="inline-flex items-center gap-2 bg-[#1E7A46] text-white text-xs font-bold px-5 py-2.5 rounded-full uppercase tracking-wider">
             <Droplets size={14} />
             Biosorbent Oil Spill Solutions
@@ -26,7 +26,7 @@ export default function Hero() {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <h1 className="font-heading text-3xl sm:text-4xl xl:text-[2.75rem] font-black leading-[1.15] text-white mb-6">
+            <h1 className="font-heading text-[1.7rem] sm:text-4xl xl:text-[2.75rem] font-black leading-[1.12] text-white mb-5 sm:mb-6">
               TRANSFORMING{" "}
               <span className="text-[#4ADE80]">WASTE</span>{" "}
               INTO SOLUTIONS THAT PROTECT OUR BLUE ECONOMY{" "}
@@ -65,14 +65,14 @@ export default function Hero() {
                   priority
                 />
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-[#1E7A46] text-white rounded-full w-24 h-24 flex flex-col items-center justify-center shadow-xl border-4 border-[#0B1A3D]">
-                <span className="text-[9px] font-bold uppercase tracking-wider leading-tight text-center px-2">
+              <div className="absolute -bottom-4 -left-4 bg-[#1E7A46] text-white rounded-full w-[7.5rem] h-[7.5rem] flex flex-col items-center justify-center shadow-xl border-4 border-[#0B1A3D]">
+                <span className="text-[11px] font-bold uppercase leading-tight text-center px-1">
                   Biodegradable
                 </span>
-                <span className="text-[9px] font-bold uppercase tracking-wider leading-tight text-center px-2">
+                <span className="text-[11px] font-bold uppercase leading-tight text-center px-1">
                   Effective
                 </span>
-                <span className="text-[9px] font-bold uppercase tracking-wider leading-tight text-center px-2">
+                <span className="text-[11px] font-bold uppercase leading-tight text-center px-1">
                   Sustainable
                 </span>
               </div>

@@ -23,10 +23,17 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const article = getArticle(slug);
-  if (!article) return { title: "News | Herock Envirotech" };
+  if (!article) return { title: "News" };
   return {
-    title: `${article.title} | Herock Envirotech`,
+    title: article.title,
     description: article.excerpt,
+    alternates: { canonical: `/news/${article.slug}` },
+    openGraph: {
+      type: "article",
+      title: article.title,
+      description: article.excerpt,
+      images: [{ url: article.coverImage, alt: article.coverCaption }],
+    },
   };
 }
 
@@ -155,13 +162,13 @@ function ArticleBlocks({ blocks }: { blocks: ArticleBlock[] }) {
                 key={i}
                 className="my-10 rounded-2xl bg-[#0B1A3D] text-white p-6 sm:p-8"
               >
-                <p className="text-[#4ADE80] text-[10px] font-bold uppercase tracking-[0.2em] mb-5">
+                <p className="text-[#4ADE80] text-[11px] font-bold uppercase tracking-[0.2em] mb-5">
                   At a glance
                 </p>
                 <dl className="grid sm:grid-cols-2 gap-5">
                   {block.items.map((item) => (
                     <div key={item.label}>
-                      <dt className="text-white/45 text-[10px] font-bold uppercase tracking-widest mb-1">
+                      <dt className="text-white/45 text-[11px] font-bold uppercase tracking-widest mb-1">
                         {item.label}
                       </dt>
                       <dd className="text-white text-sm sm:text-base font-semibold leading-snug">
@@ -201,7 +208,7 @@ export default async function NewsArticlePage({
   return (
     <>
       <Navbar />
-      <main className="pt-[102px] bg-white">
+      <main className="pt-[72px] md:pt-[102px] bg-white">
         {/* Article header */}
         <header className="border-b border-gray-100">
           <div className="max-w-3xl mx-auto px-4 pt-10 pb-8 sm:pt-14 sm:pb-10">
@@ -212,7 +219,7 @@ export default async function NewsArticlePage({
               <ArrowLeft size={14} /> News
             </Link>
 
-            <span className="inline-flex items-center gap-2 bg-[#1E7A46]/10 text-[#1E7A46] text-[10px] sm:text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-5">
+            <span className="inline-flex items-center gap-2 bg-[#1E7A46]/10 text-[#1E7A46] text-[11px] sm:text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-5">
               <Award size={12} />
               {article.badge}
             </span>
