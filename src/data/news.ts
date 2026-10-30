@@ -30,7 +30,6 @@ export type NewsArticle = {
   productImages: NewsImage[];
   eventImages: NewsImage[];
   presentationImages: NewsImage[];
-  prizes: { place: string; amount: string }[];
   blocks: ArticleBlock[];
 };
 
@@ -112,11 +111,6 @@ export const newsArticles: NewsArticle[] = [
         caption: "Standing with guests at the Nigerian Academy of Engineering.",
       },
     ],
-    prizes: [
-      { place: "First Prize", amount: "₦12M" },
-      { place: "Second", amount: "₦6M" },
-      { place: "Third", amount: "₦3M" },
-    ],
     blocks: [
       {
         type: "p",
@@ -180,10 +174,6 @@ export const newsArticles: NewsArticle[] = [
             label: "Venue",
             value: "Balmoral Convention Centre, Sheraton",
           },
-          {
-            label: "Prize pool",
-            value: "First ₦12M · Second ₦6M · Third ₦3M",
-          },
         ],
       },
       { type: "h2", text: "On the exhibition floor" },
@@ -238,7 +228,7 @@ export const newsArticles: NewsArticle[] = [
       },
       {
         type: "p",
-        text: "Herock Envirotech received a Certificate of Merit and a commitment of continued support to further advance the product. The competition’s prize pool underscored the Academy’s investment in home-grown engineering: First Prize ₦12M, Second ₦6M, and Third ₦3M.",
+        text: "Herock Envirotech received a Certificate of Merit and a commitment of continued support to further advance the product.",
       },
       {
         type: "gallery",

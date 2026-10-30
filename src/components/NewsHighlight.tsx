@@ -5,7 +5,6 @@ import {
   Award,
   Calendar,
   MapPin,
-  Trophy,
 } from "lucide-react";
 import { featuredArticle } from "@/data/news";
 import {
@@ -118,26 +117,6 @@ export default function NewsHighlight() {
                 </div>
               </div>
 
-              <div className="bg-[#1E7A46]/15 border border-[#1E7A46]/30 rounded-xl p-4 mb-6">
-                <div className="flex items-center gap-2 text-[#4ADE80] mb-3">
-                  <Trophy size={14} />
-                  <span className="text-[10px] font-bold uppercase tracking-widest">
-                    Prize Pool
-                  </span>
-                </div>
-                <div className="flex flex-wrap gap-x-5 gap-y-2">
-                  {article.prizes.map((p) => (
-                    <div key={p.place} className="text-white">
-                      <span className="text-white/50 text-[10px] uppercase tracking-wider block">
-                        {p.place}
-                      </span>
-                      <span className="font-heading font-black text-lg">
-                        {p.amount}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
 
             {productShots.length > 0 && (
