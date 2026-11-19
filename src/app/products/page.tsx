@@ -69,13 +69,13 @@ export default function ProductsPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-[72px] md:pt-[102px]">
+      <main className="pt-[72px]">
         <PageHero
           eyebrow="Innovation Entry"
           title={
             <>
               Chicken Feather Oil{" "}
-              <span className="text-[#4ADE80]">Pillow (CFOP)</span>
+              <span className="text-mint">Pillow (CFOP)</span>
             </>
           }
           description="An eco-friendly oil sorbent developed from waste chicken feathers — transforming an agricultural by-product into a sustainable solution for oil spill remediation across hydrocarbon and non-hydrocarbon sources."
@@ -84,7 +84,7 @@ export default function ProductsPage() {
         <section id="sorbent-pillow" className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="relative rounded-2xl overflow-hidden aspect-square shadow-xl">
+              <div className="relative rounded-2xl overflow-hidden aspect-square">
                 <Image
                   src="/pillow_spill.jpg"
                   alt="Chicken Feather Oil Pillow — Herock Envirotech"
@@ -92,27 +92,27 @@ export default function ProductsPage() {
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute top-4 left-4 bg-[#1E7A46] text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                <div className="absolute top-4 left-4 bg-leaf text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
                   Flagship Innovation
                 </div>
               </div>
 
               <div>
-                <h2 className="font-heading text-2xl font-black text-[#0B1A3D] uppercase tracking-wide mb-4">
+                <h2 className="font-heading text-2xl font-semibold text-ink mb-4">
                   About the Innovation
                 </h2>
-                <p className="text-gray-600 leading-relaxed mb-4">
+                <p className="text-ink/70 leading-relaxed mb-4">
                   Poultry feather waste is a major environmental challenge — millions of tons
                   are discarded annually. The Chicken Feather Oil Pillow converts this waste
                   into a high-performance, biodegradable oil absorbent.
                 </p>
-                <p className="text-gray-600 leading-relaxed mb-4">
+                <p className="text-ink/70 leading-relaxed mb-4">
                   CFOP is designed to absorb oil from both hydrocarbon and non-hydrocarbon
                   sources while promoting environmental sustainability and circular economy
                   practices — replacing costly synthetic sorbents that leave microplastic
                   pollution behind.
                 </p>
-                <p className="text-gray-600 leading-relaxed mb-8">
+                <p className="text-ink/70 leading-relaxed mb-8">
                   The product is suitable for oil spill response, environmental remediation,
                   and emergency spill management across marine, industrial, and inland
                   waterway environments.
@@ -128,13 +128,13 @@ export default function ProductsPage() {
         <ProductFeatures />
         <ProductionProcess />
 
-        <section className="py-20 bg-[#0B1A3D]">
+        <section className="py-20 bg-ink">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-12">
-              <p className="text-[#4ADE80] text-xs font-bold uppercase tracking-[0.2em] mb-3">
+              <p className="text-mint text-xs font-bold uppercase tracking-[0.2em] mb-3">
                 The Science
               </p>
-              <h2 className="font-heading text-3xl font-black text-white">How It Works</h2>
+              <h2 className="font-heading text-3xl font-semibold text-white">How It Works</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {howItWorks.map((h) => (
@@ -142,8 +142,8 @@ export default function ProductsPage() {
                   key={h.step}
                   className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center"
                 >
-                  <div className="w-14 h-14 rounded-full bg-[#1E7A46] flex items-center justify-center mx-auto mb-5">
-                    <span className="font-heading text-white font-black text-lg">{h.step}</span>
+                  <div className="w-14 h-14 rounded-full bg-leaf flex items-center justify-center mx-auto mb-5">
+                    <span className="font-heading text-white font-semibold text-lg">{h.step}</span>
                   </div>
                   <h3 className="font-heading font-bold text-white text-lg mb-3">{h.title}</h3>
                   <p className="text-white/60 text-sm leading-relaxed">{h.desc}</p>
@@ -153,22 +153,22 @@ export default function ProductsPage() {
           </div>
         </section>
 
-        <section className="py-20 bg-[#F7FAF8]">
+        <section className="py-20 bg-cream">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16">
               <div>
-                <h2 className="font-heading text-2xl font-black text-[#0B1A3D] uppercase tracking-wide mb-6">
+                <h2 className="font-heading text-2xl font-semibold text-ink mb-6">
                   Technical Specifications
                 </h2>
-                <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white">
+                <div className="overflow-hidden rounded-2xl border border-line bg-white">
                   <table className="w-full text-sm">
                     <tbody>
                       {specs.map((s, i) => (
-                        <tr key={s.field} className={i % 2 === 0 ? "bg-[#F7FAF8]" : "bg-white"}>
-                          <td className="py-3.5 px-3 sm:px-5 font-semibold text-gray-700 border-r border-gray-100 w-2/5">
+                        <tr key={s.field} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
+                          <td className="py-3.5 px-3 sm:px-5 font-semibold text-ink/70 border-r border-line w-2/5">
                             {s.field}
                           </td>
-                          <td className="py-3.5 px-3 sm:px-5 text-gray-500">{s.value}</td>
+                          <td className="py-3.5 px-3 sm:px-5 text-ink/60">{s.value}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -177,10 +177,10 @@ export default function ProductsPage() {
               </div>
 
               <div>
-                <h2 className="font-heading text-2xl font-black text-[#0B1A3D] uppercase tracking-wide mb-2">
+                <h2 className="font-heading text-2xl font-semibold text-ink mb-2">
                   Field Performance
                 </h2>
-                <p className="text-gray-500 text-sm mb-6">
+                <p className="text-ink/60 text-sm mb-6">
                   Field trials across four contaminated spill locations confirmed effectiveness
                   under real environmental conditions.
                 </p>
@@ -188,12 +188,12 @@ export default function ProductsPage() {
                   {fieldPerformance.map((p) => (
                     <div key={p.oil}>
                       <div className="flex justify-between mb-1.5">
-                        <span className="text-sm font-semibold text-gray-700">{p.oil}</span>
-                        <span className="text-sm font-bold text-[#1E7A46]">{p.value} g/g</span>
+                        <span className="text-sm font-semibold text-ink/70">{p.oil}</span>
+                        <span className="text-sm font-bold text-leaf">{p.value} g/g</span>
                       </div>
                       <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-gradient-to-r from-[#1E7A46] to-[#4ADE80] rounded-full"
+                          className="h-full bg-gradient-to-r from-leaf to-mint rounded-full"
                           style={{ width: `${(p.value / p.max) * 100}%` }}
                         />
                       </div>
@@ -205,16 +205,16 @@ export default function ProductsPage() {
           </div>
         </section>
 
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-paper">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="font-heading text-2xl font-black text-[#0B1A3D] uppercase tracking-wide mb-8 text-center">
+            <h2 className="font-heading text-2xl font-semibold text-ink mb-8 text-center">
               Potential Applications
             </h2>
             <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
               {applications.map((a) => (
                 <span
                   key={a}
-                  className="bg-[#F7FAF8] text-[#0B1A3D] text-sm font-medium px-4 py-2 rounded-full border border-gray-100"
+                  className="bg-cream text-ink text-sm font-medium px-4 py-2 rounded-full border border-line"
                 >
                   {a}
                 </span>

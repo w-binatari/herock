@@ -35,22 +35,22 @@ const features = [
 
 export default function ProductFeatures() {
   return (
-    <section className="py-16 bg-[#F7FAF8]">
+    <section className="py-16 bg-cream">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {features.map((f) => (
             <div
               key={f.title}
-              className="flex items-start gap-4 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              className="flex items-start gap-4 bg-white rounded-2xl p-6 border border-line transition-shadow"
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#1E7A46] text-white flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-leaf text-white flex items-center justify-center">
                 {f.icon}
               </div>
               <div>
-                <h3 className="font-heading font-bold text-[#1E7A46] text-sm uppercase tracking-wider mb-1.5">
+                <h3 className="font-heading font-bold text-leaf text-sm mb-1.5">
                   {f.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{f.desc}</p>
+                <p className="text-ink/70 text-sm leading-relaxed">{f.desc}</p>
               </div>
             </div>
           ))}

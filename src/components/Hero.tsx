@@ -1,84 +1,85 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Droplets, Recycle } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Award } from "lucide-react";
+
+const stats = [
+  { value: "1.3–2.8 g", label: "of oil absorbed per gram of sorbent" },
+  { value: "Top 8", label: "of 108 entries, NAE National Innovation Competition 2026" },
+  { value: "100%", label: "biodegradable after use, with no microplastics" },
+  { value: "4", label: "UN Sustainable Development Goals advanced" },
+];
 
 export default function Hero() {
   return (
-    <section className="relative bg-[#0B1A3D] overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
-      />
-
-      <div className="relative max-w-7xl mx-auto px-4 py-10 sm:py-16 lg:py-24">
-        <div className="flex flex-wrap gap-2 sm:gap-3 mb-7 sm:mb-10">
-          <span className="inline-flex items-center gap-2 bg-[#1E7A46] text-white text-xs font-bold px-5 py-2.5 rounded-full uppercase tracking-wider">
-            <Droplets size={14} />
-            Biosorbent Oil Spill Solutions
-          </span>
-          <span className="inline-flex items-center gap-2 bg-[#0B1A3D] border-2 border-[#1E7A46] text-white text-xs font-bold px-5 py-2.5 rounded-full uppercase tracking-wider">
-            <Recycle size={14} className="text-[#4ADE80]" />
-            Circular Economy Services
-          </span>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="bg-cream">
+      <div className="max-w-7xl mx-auto px-4 pt-10 sm:pt-16 lg:pt-20">
+        <div className="grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center">
           <div>
-            <h1 className="font-heading text-[1.7rem] sm:text-4xl xl:text-[2.75rem] font-black leading-[1.12] text-white mb-5 sm:mb-6">
-              TRANSFORMING{" "}
-              <span className="text-[#4ADE80]">WASTE</span>{" "}
-              INTO SOLUTIONS THAT PROTECT OUR BLUE ECONOMY{" "}
-              <span className="text-[#4ADE80]">
-                THROUGH SCIENCE AND CIRCULAR INNOVATION.
-              </span>
-            </h1>
-
-            <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
-              Herock Envirotech is a Nigerian cleantech startup turning agricultural
-              waste into biodegradable, low-cost products that restore ecosystems and
-              create economic value — starting with our flagship Chicken Feather Oil
-              Pillow (CFOP), a scientifically validated oil sorbent.
+            <p className="eyebrow text-leaf mb-5 sm:mb-6">
+              Biosorbent oil spill solutions · Circular economy
             </p>
-
+            <h1 className="font-heading text-[2.4rem] leading-[1.02] sm:text-6xl xl:text-[4.4rem] font-semibold text-ink mb-6">
+              Transforming waste into solutions that protect our{" "}
+              <span className="text-leaf">blue economy.</span>
+            </h1>
+            <p className="text-ink/70 text-lg leading-relaxed mb-8 max-w-xl">
+              Herock Envirotech is a Nigerian cleantech company turning poultry feather
+              waste into the Chicken Feather Oil Pillow (CFOP): a biodegradable,
+              low-cost sorbent for hydrocarbon and non-hydrocarbon spills.
+            </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/solutions" className="btn-primary">
-                Explore Solutions
+              <Link href="/products" className="btn-primary">
+                See the product <ArrowRight size={16} />
               </Link>
-              <Link href="/products" className="btn-outline">
-                Our Products
+              <Link href="/solutions" className="btn-outline-green">
+                Explore solutions
               </Link>
             </div>
           </div>
 
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-lg">
-              <div className="absolute -inset-4 bg-[#1E7A46]/20 rounded-3xl blur-2xl" />
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-white">
-                <Image
-                  src="/pillow_spill.jpg"
-                  alt="Herock Envirotech Oil Absorbent Pillows"
-                  width={600}
-                  height={450}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-              </div>
-              <div className="absolute -bottom-4 -left-4 bg-[#1E7A46] text-white rounded-full w-[7.5rem] h-[7.5rem] flex flex-col items-center justify-center shadow-xl border-4 border-[#0B1A3D]">
-                <span className="text-[11px] font-bold uppercase leading-tight text-center px-1">
-                  Biodegradable
-                </span>
-                <span className="text-[11px] font-bold uppercase leading-tight text-center px-1">
-                  Effective
-                </span>
-                <span className="text-[11px] font-bold uppercase leading-tight text-center px-1">
-                  Sustainable
-                </span>
-              </div>
+          <div className="relative">
+            <div className="relative aspect-[5/4] rounded-[28px] overflow-hidden bg-[#E9E9E7]">
+              <Image
+                src="/pillow_spill.jpg"
+                alt="Stack of Herock Chicken Feather Oil Pillows"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                priority
+              />
             </div>
+            <Link
+              href="/news/nae-top-8-finalist"
+              className="group absolute -bottom-6 left-4 right-4 sm:left-auto sm:-left-8 sm:right-auto sm:max-w-[300px] bg-ink text-white rounded-2xl p-4 sm:p-5 shadow-[0_18px_40px_rgba(15,42,46,0.25)] flex items-start gap-3"
+            >
+              <span className="flex-shrink-0 w-9 h-9 rounded-full bg-leaf flex items-center justify-center">
+                <Award size={17} />
+              </span>
+              <span>
+                <span className="eyebrow block text-mint mb-1">NAE 2026</span>
+                <span className="block text-sm font-medium leading-snug">
+                  Top 8 finalist and Certificate of Merit, Nigerian Academy of Engineering
+                </span>
+              </span>
+              <ArrowUpRight
+                size={16}
+                className="flex-shrink-0 text-white/50 group-hover:text-white transition-colors"
+              />
+            </Link>
           </div>
         </div>
+
+        <dl className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 mt-20 sm:mt-24 pb-14 sm:pb-16">
+          {stats.map((s) => (
+            <div key={s.value} className="border-t border-ink/20 pt-4">
+              <dt className="sr-only">{s.label}</dt>
+              <dd className="font-heading text-3xl sm:text-4xl font-semibold text-ink tracking-tight">
+                {s.value}
+              </dd>
+              <dd className="text-ink/60 text-sm leading-snug mt-2 max-w-[16rem]">{s.label}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

@@ -13,12 +13,12 @@ export const metadata = pageMetadata(
 
 
 const circularSteps = [
-  { step: "Poultry Waste", color: "#D4A017" },
-  { step: "Collection", color: "#1D8A8A" },
+  { step: "Poultry Waste", color: "#8A6D2F" },
+  { step: "Collection", color: "#24443F" },
   { step: "Processing", color: "#1E7A46" },
   { step: "Manufacturing", color: "#0E4D2F" },
-  { step: "Oil Spill Cleanup", color: "#1E7A46" },
-  { step: "Ecosystem Restoration", color: "#0B1A3D" },
+  { step: "Oil Spill Cleanup", color: "#24443F" },
+  { step: "Ecosystem Restoration", color: "#0F2A2E" },
 ];
 
 const environmentalImpact = [
@@ -41,25 +41,25 @@ export default function SustainabilityPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-[72px] md:pt-[102px]">
+      <main className="pt-[72px]">
         <PageHero
           eyebrow="Sustainability"
           title={
             <>
               Circular Economy{" "}
-              <span className="text-[#4ADE80]">Innovation</span>
+              <span className="text-mint">Innovation</span>
             </>
           }
           description="The Chicken Feather Oil Pillow advances responsible production, climate-conscious remediation, and protection of life below water — turning waste into a resource for environmental conservation."
         />
 
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-paper">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="font-heading text-2xl font-black text-[#0B1A3D] uppercase tracking-wide mb-3">
+              <h2 className="font-heading text-2xl font-semibold text-ink mb-3">
                 The Circular Economy Flow
               </h2>
-              <p className="text-gray-500 max-w-xl mx-auto">
+              <p className="text-ink/60 max-w-xl mx-auto">
                 Nothing goes to waste. Every step of our process creates environmental and economic value.
               </p>
             </div>
@@ -67,7 +67,7 @@ export default function SustainabilityPage() {
               {circularSteps.map((p, i) => (
                 <div key={p.step} className="flex items-center gap-3">
                   <div
-                    className="px-5 py-3 rounded-full text-white font-bold text-sm shadow-md"
+                    className="px-5 py-3 rounded-full text-white font-bold text-sm"
                     style={{ backgroundColor: p.color }}
                   >
                     {p.step}
@@ -81,47 +81,47 @@ export default function SustainabilityPage() {
           </div>
         </section>
 
-        <section className="py-20 bg-[#F7FAF8]">
+        <section className="py-20 bg-cream">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <div>
-                <h2 className="font-heading text-2xl font-black text-[#0B1A3D] uppercase tracking-wide mb-5">
+                <h2 className="font-heading text-2xl font-semibold text-ink mb-5">
                   Environmental Impact
                 </h2>
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <p className="text-ink/70 leading-relaxed mb-6">
                   The Chicken Feather Oil Pillow contributes to environmental sustainability
                   by addressing both agricultural waste and oil pollution simultaneously.
                 </p>
                 <ul className="space-y-3">
                   {environmentalImpact.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-gray-600 text-sm">
-                      <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#1E7A46] mt-2" />
+                    <li key={item} className="flex items-start gap-3 text-ink/70 text-sm">
+                      <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-leaf mt-2" />
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="bg-[#0B1A3D] rounded-2xl p-8 text-white">
-                <h3 className="font-heading font-bold text-lg uppercase tracking-wide mb-4">
+              <div className="bg-ink rounded-2xl p-8 text-white">
+                <h3 className="font-heading font-bold text-lg mb-4">
                   Circular Economy Assessment
                 </h3>
                 <div className="space-y-4 text-sm">
                   <div className="flex justify-between border-b border-white/10 pb-3">
                     <span className="text-white/60">Circularity Score</span>
-                    <span className="font-bold text-[#4ADE80]">13 / 27</span>
+                    <span className="font-bold text-mint">13 / 27</span>
                   </div>
                   <div className="flex justify-between border-b border-white/10 pb-3">
                     <span className="text-white/60">Economic Viability</span>
-                    <span className="font-bold text-[#4ADE80]">Confirmed</span>
+                    <span className="font-bold text-mint">Confirmed</span>
                   </div>
                   <div className="flex justify-between border-b border-white/10 pb-3">
                     <span className="text-white/60">Raw Material Availability</span>
-                    <span className="font-bold text-[#4ADE80]">Adequate</span>
+                    <span className="font-bold text-mint">Adequate</span>
                   </div>
                   <div className="flex justify-between border-b border-white/10 pb-3">
                     <span className="text-white/60">Processing Technology</span>
-                    <span className="font-bold text-[#4ADE80]">Validated</span>
+                    <span className="font-bold text-mint">Validated</span>
                   </div>
                   <p className="text-white/50 text-xs pt-2 leading-relaxed">
                     Strong potential for utilizing poultry waste across the Niger Delta.
@@ -133,10 +133,10 @@ export default function SustainabilityPage() {
           </div>
         </section>
 
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-paper">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="font-heading text-2xl font-black text-[#0B1A3D] uppercase tracking-wide">
+              <h2 className="font-heading text-2xl font-semibold text-ink">
                 Sustainability Benefits
               </h2>
             </div>
@@ -144,13 +144,13 @@ export default function SustainabilityPage() {
               {sustainabilityBenefits.map((imp) => (
                 <div
                   key={imp.title}
-                  className="bg-[#F7FAF8] rounded-2xl p-7 border border-gray-100"
+                  className="bg-cream rounded-2xl p-7 border border-line"
                 >
-                  <div className="w-12 h-12 rounded-full bg-[#1E7A46] text-white flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-leaf text-white flex items-center justify-center mb-4">
                     {imp.icon}
                   </div>
-                  <h3 className="font-heading font-bold text-[#0B1A3D] mb-2 text-sm">{imp.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{imp.desc}</p>
+                  <h3 className="font-heading font-bold text-ink mb-2 text-sm">{imp.title}</h3>
+                  <p className="text-ink/60 text-sm leading-relaxed">{imp.desc}</p>
                 </div>
               ))}
             </div>

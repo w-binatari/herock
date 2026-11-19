@@ -1,58 +1,34 @@
 import Link from "next/link";
-import { Target, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function AboutPreview() {
   return (
-    <section className="py-20 bg-[#F7FAF8]">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* About Us */}
-          <div>
-            <div className="flex items-center gap-3 mb-5">
-              <span className="text-[#1E7A46] text-lg">🌿</span>
-              <h2 className="font-heading text-xl font-black text-[#0B1A3D] uppercase tracking-wider">
-                About Us
-              </h2>
-              <div className="flex-1 h-0.5 bg-[#1E7A46]/30" />
-            </div>
-            <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
-                  <p>
-                    Herock Envirotech Ltd. is a Nigerian cleantech company focused on
-                    transforming agricultural waste into high-performance environmental
-                    solutions. We develop and manufacture the Chicken Feather Oil Pillow
-                    (CFOP) — a biodegradable, cost-effective alternative to conventional
-                    oil absorbents, validated at TRL 7.
-                  </p>
-              <p>
-                By converting poultry feather waste into functional sorbents, we
-                address two critical challenges: agricultural waste management and
-                oil spill remediation — creating value at every step of the circular
-                economy.
-              </p>
-            </div>
-          </div>
-
-          {/* Mission */}
-          <div>
-            <div className="flex items-center gap-3 mb-5">
-              <Target size={20} className="text-[#0B1A3D]" />
-              <h2 className="font-heading text-xl font-black text-[#0B1A3D] uppercase tracking-wider">
-                Mission
-              </h2>
-              <div className="flex-1 h-0.5 bg-[#1E7A46]/30" />
-            </div>
-            <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              To build Africa&apos;s circular economy by developing environmentally
-              responsible products and technologies that convert waste into valuable
-              solutions — protecting our blue economy through science and innovation.
+    <section className="bg-paper py-20 sm:py-28">
+      <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-[1fr_2fr] gap-10 lg:gap-16">
+        <p className="eyebrow text-leaf">Our mission</p>
+        <div>
+          <p className="font-heading text-2xl sm:text-4xl leading-[1.2] font-medium text-ink mb-10">
+            To build Africa&apos;s circular economy by developing environmentally
+            responsible products and technologies that convert waste into valuable
+            solutions, protecting our blue economy through science and innovation.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-8 text-ink/70 leading-relaxed mb-10">
+            <p>
+              Herock Envirotech Ltd. is a Nigerian cleantech company transforming
+              agricultural waste into high-performance environmental solutions. We
+              develop and manufacture the Chicken Feather Oil Pillow (CFOP), a
+              biodegradable, cost-effective alternative to conventional oil absorbents,
+              validated at TRL 7.
             </p>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-1.5 text-[#1E7A46] text-sm font-bold uppercase tracking-wider hover:gap-2.5 transition-all"
-            >
-              Learn More About Us <ArrowRight size={14} />
-            </Link>
+            <p>
+              By converting poultry feather waste into functional sorbents, we tackle two
+              problems at once: agricultural waste management and oil spill
+              remediation, creating value at every step of the circular economy.
+            </p>
           </div>
+          <Link href="/about" className="btn-outline-green">
+            About Herock <ArrowRight size={16} />
+          </Link>
         </div>
       </div>
     </section>

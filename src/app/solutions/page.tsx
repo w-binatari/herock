@@ -62,13 +62,13 @@ export default function SolutionsPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-[72px] md:pt-[102px]">
+      <main className="pt-[72px]">
         <PageHero
           eyebrow="Our Solutions"
           title={
             <>
               Protecting Our{" "}
-              <span className="text-[#4ADE80]">Blue Economy</span>
+              <span className="text-mint">Blue Economy</span>
             </>
           }
           description="Circular-economy technologies for oil spill response, water pollution control, and industrial environmental management — powered by science, built from waste."
@@ -79,7 +79,7 @@ export default function SolutionsPage() {
             <section
               key={s.id}
               id={s.id}
-              className={`py-20 ${i % 2 === 0 ? "bg-white" : "bg-[#F7FAF8]"}`}
+              className={`py-20 ${i % 2 === 0 ? "bg-white" : "bg-cream"}`}
             >
               <div className="max-w-7xl mx-auto px-4">
                 <div
@@ -102,19 +102,19 @@ export default function SolutionsPage() {
                   </div>
 
                   <div className={s.reverse ? "lg:col-start-1 lg:row-start-1" : ""}>
-                    <p className="text-[#1E7A46] text-xs font-bold uppercase tracking-[0.2em] mb-3">
+                    <p className="text-leaf text-xs font-bold uppercase tracking-[0.2em] mb-3">
                       {s.tagline}
                     </p>
-                    <h2 className="font-heading text-2xl font-black text-[#0B1A3D] uppercase tracking-wide mb-4">
+                    <h2 className="font-heading text-2xl font-semibold text-ink mb-4">
                       {s.title}
                     </h2>
-                    <p className="text-gray-600 leading-relaxed mb-6">{s.desc}</p>
+                    <p className="text-ink/70 leading-relaxed mb-6">{s.desc}</p>
 
                     <div className="space-y-2 mb-8">
                       {s.benefits.map((b) => (
                         <div key={b} className="flex items-center gap-2">
-                          <CheckCircle2 size={15} className="text-[#1E7A46] flex-shrink-0" />
-                          <span className="text-gray-600 text-sm">{b}</span>
+                          <CheckCircle2 size={15} className="text-leaf flex-shrink-0" />
+                          <span className="text-ink/70 text-sm">{b}</span>
                         </div>
                       ))}
                     </div>

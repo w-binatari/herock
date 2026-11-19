@@ -22,24 +22,24 @@ export default function ContactPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-[72px] md:pt-[102px]">
+      <main className="pt-[72px]">
         <PageHero
           eyebrow="Get In Touch"
           title={
             <>
               Let&apos;s Build{" "}
-              <span className="text-[#4ADE80]">Sustainable Solutions</span>{" "}
+              <span className="text-mint">Sustainable Solutions</span>{" "}
               Together
             </>
           }
           description="Reach out to discuss partnerships, innovation collaborations, or learn more about our Chicken Feather Oil Spill Sorbent Pillow."
         />
 
-        <section className="py-20 bg-[#F7FAF8]">
+        <section className="py-20 bg-cream">
           <div className="max-w-5xl mx-auto px-4">
-            <div className="bg-[#0B1A3D] rounded-2xl p-8 sm:p-10 mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+            <div className="bg-ink rounded-2xl p-8 sm:p-10 mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
               <div>
-                <h2 className="font-heading text-xl sm:text-2xl font-black text-white mb-2">
+                <h2 className="font-heading text-xl sm:text-2xl font-semibold text-white mb-2">
                   The fastest way to reach us is WhatsApp
                 </h2>
                 <p className="text-white/60 text-sm">
@@ -61,23 +61,23 @@ export default function ContactPage() {
               {contactInfo.map((c) => (
                 <div
                   key={c.title}
-                  className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 flex items-start gap-4"
+                  className="bg-white rounded-2xl p-5 border border-line flex items-start gap-4"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#0B1A3D] flex items-center justify-center flex-shrink-0 text-[#4ADE80]">
+                  <div className="w-10 h-10 rounded-xl bg-ink flex items-center justify-center flex-shrink-0 text-mint">
                     {c.icon}
                   </div>
                   <div className="min-w-0">
-                    <p className="font-bold text-[#0B1A3D] text-sm mb-0.5">{c.title}</p>
+                    <p className="font-bold text-ink text-sm mb-0.5">{c.title}</p>
                     {c.href ? (
                       <a
                         href={c.href}
                         {...(c.href.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
-                        className="text-gray-500 text-sm hover:text-[#1E7A46] transition-colors break-words"
+                        className="text-ink/60 text-sm hover:text-leaf transition-colors break-words"
                       >
                         {c.value}
                       </a>
                     ) : (
-                      <p className="text-gray-500 text-sm">{c.value}</p>
+                      <p className="text-ink/60 text-sm">{c.value}</p>
                     )}
                   </div>
                 </div>

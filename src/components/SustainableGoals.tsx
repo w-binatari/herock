@@ -25,39 +25,32 @@ const sdgs = [
 
 export default function SustainableGoals() {
   return (
-    <section className="py-16 bg-white border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center gap-4 mb-4">
-          <div className="flex-1 h-px bg-[#D4A017]/40" />
-          <h2 className="font-heading text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#0B1A3D] text-center sm:whitespace-nowrap">
-            Aligned with the UN Sustainable Development Goals
-          </h2>
-          <div className="flex-1 h-px bg-[#D4A017]/40" />
+    <section className="bg-cream py-20 sm:py-24">
+      <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-[1fr_2fr] gap-10 lg:gap-16">
+        <div>
+          <p className="eyebrow text-leaf mb-4">UN Sustainable Development Goals</p>
+          <p className="text-ink/70 leading-relaxed max-w-sm">
+            The Chicken Feather Oil Pillow advances SDGs 9, 12, 13 and 14 through
+            circular manufacturing, responsible production, climate-conscious
+            remediation and protection of life below water.
+          </p>
         </div>
-        <p className="text-center text-gray-500 text-sm max-w-2xl mx-auto mb-10">
-          Our Chicken Feather Oil Pillow innovation advances SDGs 9, 12, 13, and 14 through
-          circular manufacturing, responsible production, climate-conscious remediation, and
-          protection of life below water.
-        </p>
-
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-4xl mx-auto">
+        <ul className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
           {sdgs.map((sdg) => (
-            <div key={sdg.number} className="flex flex-col items-center text-center group">
-              <div className="w-full max-w-[140px] aspect-square shadow-md transition-transform group-hover:scale-105 overflow-hidden rounded-sm">
+            <li key={sdg.number}>
+              <div className="aspect-square rounded-2xl overflow-hidden">
                 <Image
                   src={sdg.image}
                   alt={`UN Sustainable Development Goal ${sdg.number}: ${sdg.title}`}
-                  width={140}
-                  height={140}
-                  className="w-full h-full object-contain"
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <p className="mt-3 text-[#0B1A3D] text-[11px] sm:text-xs font-bold uppercase tracking-wide leading-snug max-w-[140px]">
-                {sdg.title}
-              </p>
-            </div>
+              <p className="mt-3 text-ink/70 text-sm leading-snug">{sdg.title}</p>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
