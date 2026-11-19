@@ -19,7 +19,8 @@ export default function ContactCta() {
             className="inline-flex items-center justify-center gap-2 bg-white text-ink font-semibold rounded-full px-6 py-3.5 hover:bg-cream transition-colors flex-shrink-0"
           >
             <MessageCircle size={17} />
-            WhatsApp {PHONE_DISPLAY}
+            <span className="sm:hidden">WhatsApp us</span>
+            <span className="hidden sm:inline whitespace-nowrap">WhatsApp {PHONE_DISPLAY}</span>
           </a>
         </div>
       </div>
